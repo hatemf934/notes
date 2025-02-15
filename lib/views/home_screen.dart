@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/widgets/custom_floating_action_button.dart';
-import 'package:note_demo/widgets/empty_notes.dart';
+import 'package:note_demo/widgets/custom_grid_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,10 +22,7 @@ class HomeScreen extends StatelessWidget {
                 "Notes",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                height: 80,
-              ),
-              EmptyNotes()
+              Expanded(child: CustomGridView())
             ],
           ),
         ),

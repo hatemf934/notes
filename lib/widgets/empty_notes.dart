@@ -8,6 +8,9 @@ class EmptyNotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 130,
+        ),
         Image.asset(
           kImage,
         ),
