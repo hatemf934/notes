@@ -25,7 +25,7 @@ class Onborading extends StatelessWidget {
             const Text(
               textAlign: TextAlign.center,
               "Dive right in and clear that mind of yours by writing your thoughts down",
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             ),
             const SizedBox(
               height: 40,
