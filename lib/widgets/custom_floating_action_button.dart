@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/views/show_note_screen.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -23,7 +24,9 @@ class CustomFloatingActionButton extends StatelessWidget {
         child: FloatingActionButton(
           splashColor: kSecondaryColor,
           backgroundColor: kSecondaryColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, ShowNoteScreen.id);
+          },
           shape: RoundedRectangleBorder(
             borderRadius:
                 BorderRadius.circular(48), // Adjust the radius as needed

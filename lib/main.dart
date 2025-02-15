@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
+import 'package:note_demo/views/show_note_screen.dart';
 
 void main() {
   runApp(const NoteApp());
@@ -17,6 +18,7 @@ class NoteApp extends StatelessWidget {
       routes: {
         Onborading.id: (context) => const Onborading(),
         HomeScreen.id: (context) => const HomeScreen(),
+        ShowNoteScreen.id: (context) => const ShowNoteScreen(),
       },
     );
   }
