@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/widgets/custom_circle_avatar.dart';
 
 class Onborading extends StatelessWidget {
   const Onborading({super.key});
@@ -29,18 +30,7 @@ class Onborading extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            CircleAvatar(
-              radius: 35,
-              backgroundColor: kSecondaryColor,
-              child: Center(
-                child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Colors.white,
-                    )),
-              ),
-            ),
+            const CustomCircleAvatar(),
           ],
         ),
       ),

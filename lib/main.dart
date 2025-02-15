@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class NoteApp extends StatelessWidget {
       initialRoute: Onborading.id,
       routes: {
         Onborading.id: (context) => const Onborading(),
+        HomeScreen.id: (context) => const HomeScreen(),
       },
     );
   }
