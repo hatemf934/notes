@@ -32,7 +32,8 @@ class NoteItem extends StatelessWidget {
                 ),
                 Text(
                   "may 12 2025",
-                  style: TextStyle(color: kPrimaryColor, fontSize: 15),
+                  style: TextStyle(
+                      fontFamily: "Inter", color: kPrimaryColor, fontSize: 15),
                 ),
               ],
             ),
@@ -41,13 +42,15 @@ class NoteItem extends StatelessWidget {
             // ),
             Text(
               "Title 1",
-              style: TextStyle(color: kPrimaryColor, fontSize: 30),
+              style: TextStyle(
+                  fontFamily: "FiraSans", color: kPrimaryColor, fontSize: 30),
             ),
             Text(
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               "Title 1lspprhpdpfpadgapejhgpjhfgahgdgjspps[][a[[an]hhhasopaspfj]]",
-              style: TextStyle(color: kPrimaryColor, fontSize: 12),
+              style: TextStyle(
+                  fontFamily: "Inter", color: kPrimaryColor, fontSize: 12),
             ),
           ],
         ),

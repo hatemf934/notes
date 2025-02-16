@@ -20,7 +20,10 @@ class CustomAppBar extends StatelessWidget {
 
         const Text(
           "Back",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontFamily: "FiraSans",
+            fontSize: 35,
+          ),
         ), // عنوان الشاشة
         const Spacer(),
         const AppBarIcons(),

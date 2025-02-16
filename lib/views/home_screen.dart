@@ -20,7 +20,10 @@ class HomeScreen extends StatelessWidget {
               ),
               Text(
                 "Notes",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontFamily: "FiraSans",
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
               ),
               Expanded(child: CustomGridView())
             ],

@@ -17,7 +17,10 @@ class Onborading extends StatelessWidget {
             Image.asset(kImage),
             const Text(
               "All thoughts.\n One place.",
-              style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontFamily: "FiraSans",
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 30,
@@ -25,7 +28,10 @@ class Onborading extends StatelessWidget {
             const Text(
               textAlign: TextAlign.center,
               "Dive right in and clear that mind of yours by writing your thoughts down",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: TextStyle(
+                  fontFamily: "Roboto",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400),
             ),
             const SizedBox(
               height: 40,

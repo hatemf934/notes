@@ -16,7 +16,10 @@ class EmptyNotes extends StatelessWidget {
         ),
         const Text(
           "Create your first note !",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: TextStyle(
+              fontFamily: "FiraSans",
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
         )
       ],
     );

@@ -19,7 +19,10 @@ class TextFieldCustom extends StatelessWidget {
 
         decoration: InputDecoration(
           hintText: text,
-          hintStyle: TextStyle(color: Colors.grey, fontSize: size), // نص تلميحي
+          hintStyle: TextStyle(
+              fontFamily: "Nunito",
+              color: Colors.grey,
+              fontSize: size), // نص تلميحي
           border: InputBorder.none, // إزالة الحدود
         ),
         maxLines: maxlines, // يسمح بإدخال أكثر من سطر
