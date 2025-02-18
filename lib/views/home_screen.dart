@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
+import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/custom_floating_action_button.dart';
 import 'package:note_demo/widgets/custom_grid_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-  static String id = "homepage";
+  static String id = RouteManager.kHomescreen;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         backgroundColor: kPrimaryColor,
         body: Padding(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(PaddingManager.pd16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 30,
+                height: HeightManager.h30,
               ),
               Text(
-                "Notes",
+                TextManager.kNotesHome,
                 style: TextStyle(
-                    fontFamily: "FiraSans",
-                    fontSize: 30,
+                    fontFamily: FontFamilyManager.kOtamaFont,
+                    fontSize: FontSizeManager.font30,
                     fontWeight: FontWeight.bold),
               ),
-              Expanded(child: CustomGridView())
+              const Expanded(child: CustomGridView())
             ],
           ),
         ),
-        floatingActionButton: CustomFloatingActionButton());
+        floatingActionButton: const CustomFloatingActionButton());
   }
 }

@@ -24,7 +24,7 @@ class Onborading extends StatelessWidget {
               TextManager.kTitleBording,
               style: TextStyle(
                 color: kSecondaryColor,
-                fontFamily: FontFamilyManager.kTitleFamily,
+                fontFamily: FontFamilyManager.kOtamaFont,
                 fontSize: FontSizeManager.font48,
               ),
             ),
@@ -36,7 +36,7 @@ class Onborading extends StatelessWidget {
               TextManager.kSubTitleBording,
               style: TextStyle(
                   color: kSecondaryColor,
-                  fontFamily: FontFamilyManager.kSubTitleFamily,
+                  fontFamily: FontFamilyManager.kRobotoFont,
                   fontSize: FontSizeManager.font16,
                   fontWeight: FontWeight.w400),
             ),

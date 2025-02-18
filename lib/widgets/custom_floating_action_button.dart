@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/views/show_note_screen.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -8,19 +11,21 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16, bottom: 24),
+      padding: EdgeInsets.only(
+          right: PaddingManager.pd16, bottom: PaddingManager.pd24),
       child: Container(
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(48), boxShadow: [
-          BoxShadow(
-            color: kSecondaryColor.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 2),
-          )
-        ]),
-        height: 70,
-        width: 70,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(RadiusManager.rd48),
+            boxShadow: [
+              BoxShadow(
+                color: kSecondaryColor.withOpacity(0.5),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 2),
+              )
+            ]),
+        height: HeightManager.h70,
+        width: WidthManager.w70,
         child: FloatingActionButton(
           splashColor: kSecondaryColor,
           backgroundColor: kSecondaryColor,
@@ -28,13 +33,13 @@ class CustomFloatingActionButton extends StatelessWidget {
             Navigator.pushNamed(context, ShowNoteScreen.id);
           },
           shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.circular(48), // Adjust the radius as needed
+            borderRadius: BorderRadius.circular(
+                RadiusManager.rd48), // Adjust the radius as needed
           ),
-          child: const Icon(
+          child: Icon(
             Icons.add,
             color: kPrimaryColor,
-            size: 45,
+            size: FontSizeManager.font48,
           ),
         ),
       ),
