@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
+import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/custom_circle_avatar.dart';
 
 class Onborading extends StatelessWidget {
   const Onborading({super.key});
-  static String id = "onborading";
+  static String id = RouteManager.kOnbording;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(PaddingManager.pd16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(kImage),
-            const Text(
-              "All thoughts.\n One place.",
+            Text(
+              TextManager.kTitleBording,
               style: TextStyle(
-                  fontFamily: "FiraSans",
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold),
+                color: kSecondaryColor,
+                fontFamily: FontFamilyManager.kTitleFamily,
+                fontSize: FontSizeManager.font48,
+              ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: HeightManager.h30,
             ),
-            const Text(
+            Text(
               textAlign: TextAlign.center,
-              "Dive right in and clear that mind of yours by writing your thoughts down",
+              TextManager.kSubTitleBording,
               style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 16,
+                  color: kSecondaryColor,
+                  fontFamily: FontFamilyManager.kSubTitleFamily,
+                  fontSize: FontSizeManager.font16,
                   fontWeight: FontWeight.w400),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: HeightManager.h40,
             ),
             const CustomCircleAvatar(),
           ],

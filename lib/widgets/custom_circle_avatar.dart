@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/views/home_screen.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
@@ -11,10 +12,10 @@ class CustomCircleAvatar extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, HomeScreen.id);
       },
-      child: const CircleAvatar(
-        radius: 35,
+      child: CircleAvatar(
+        radius: RadiusManager.rd35,
         backgroundColor: kSecondaryColor,
-        child: Center(
+        child: const Center(
           child: Icon(
             Icons.arrow_forward_ios_rounded,
             color: kPrimaryColor,

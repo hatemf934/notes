@@ -96,6 +96,9 @@ flutter:
     - family: FiraSans
       fonts:
         - asset: assets/fonts/FiraSans-Black.ttf
+    - family: Otama
+      fonts:
+        - asset: assets/fonts/Otama-ep.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
