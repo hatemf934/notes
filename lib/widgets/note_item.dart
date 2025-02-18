@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -9,13 +11,17 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding:
-            const EdgeInsets.only(top: 24, bottom: 12, left: 16, right: 16),
+        padding: EdgeInsets.only(
+          top: PaddingManager.pd24,
+          bottom: PaddingManager.pd12,
+          left: PaddingManager.pd16,
+          right: PaddingManager.pd16,
+        ),
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 12, 246, 215),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(RadiusManager.rd16),
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -26,14 +32,18 @@ class NoteItem extends StatelessWidget {
                   child: Center(
                     child: Text(
                       '1',
-                      style: TextStyle(color: kPrimaryColor, fontSize: 20),
+                      style: TextStyle(
+                          color: kPrimaryColor,
+                          fontSize: FontSizeManager.font20),
                     ),
                   ),
                 ),
                 Text(
                   "may 12 2025",
                   style: TextStyle(
-                      fontFamily: "Inter", color: kPrimaryColor, fontSize: 15),
+                      fontFamily: FontFamilyManager.kInterFont,
+                      color: kPrimaryColor,
+                      fontSize: FontSizeManager.font16),
                 ),
               ],
             ),
@@ -43,14 +53,18 @@ class NoteItem extends StatelessWidget {
             Text(
               "Title 1",
               style: TextStyle(
-                  fontFamily: "FiraSans", color: kPrimaryColor, fontSize: 30),
+                  fontFamily: FontFamilyManager.kOtamaFont,
+                  color: kPrimaryColor,
+                  fontSize: FontSizeManager.font30),
             ),
             Text(
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               "Title 1lspprhpdpfpadgapejhgpjhfgahgdgjspps[][a[[an]hhhasopaspfj]]",
               style: TextStyle(
-                  fontFamily: "Inter", color: kPrimaryColor, fontSize: 12),
+                  fontFamily: FontFamilyManager.kInterFont,
+                  color: kPrimaryColor,
+                  fontSize: FontSizeManager.font12),
             ),
           ],
         ),

@@ -4,5 +4,8 @@ class TextManager {
   static String kSubTitleBording =
       "Dive right in and clear that mind of yours by writing your thoughts down";
   static String kNotesHome = "Notes";
+  static String kTitle = "Title";
+  static String kSubTitle = "Type something...";
+  static String kBack = "Back";
   static String kEmptyScreen = "Create your first note !";
 }

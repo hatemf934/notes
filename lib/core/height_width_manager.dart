@@ -9,4 +9,5 @@ class HeightManager {
 class WidthManager {
   WidthManager._();
   static double w70 = 70;
+  static double w40 = 40;
 }

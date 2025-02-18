@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
 
 class TextFieldCustom extends StatelessWidget {
   const TextFieldCustom(
@@ -13,20 +15,19 @@ class TextFieldCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(PaddingManager.pd16),
       child: TextField(
         cursorColor: Colors.grey,
-
         decoration: InputDecoration(
           hintText: text,
           hintStyle: TextStyle(
-              fontFamily: "Nunito",
+              fontFamily: FontFamilyManager.kNunitoFont,
               color: Colors.grey,
-              fontSize: size), // نص تلميحي
-          border: InputBorder.none, // إزالة الحدود
+              fontSize: size),
+          border: InputBorder.none,
         ),
-        maxLines: maxlines, // يسمح بإدخال أكثر من سطر
-        keyboardType: TextInputType.multiline, // لوحة مفاتيح متعددة الأسطر
+        maxLines: maxlines,
+        keyboardType: TextInputType.multiline,
       ),
     );
   }

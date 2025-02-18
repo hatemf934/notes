@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/app_bar_icons.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -9,20 +11,20 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios_new_outlined,
-            size: 30,
+            size: FontSizeManager.font30,
           ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
 
-        const Text(
-          "Back",
+        Text(
+          TextManager.kBack,
           style: TextStyle(
-            fontFamily: "FiraSans",
-            fontSize: 35,
+            fontFamily: FontFamilyManager.kOtamaFont,
+            fontSize: FontSizeManager.font30,
           ),
         ), // عنوان الشاشة
         const Spacer(),

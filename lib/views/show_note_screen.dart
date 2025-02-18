@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/padding_manager.dart';
+import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/app_bar.dart';
 import 'package:note_demo/widgets/text_field_custom.dart';
 
 class ShowNoteScreen extends StatelessWidget {
   const ShowNoteScreen({super.key});
-  static String id = "showscreen";
+  static String id = RouteManager.kShowscreen;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: kPrimaryColor,
       body: Padding(
-        padding: EdgeInsets.only(left: 12, right: 12, top: 24),
+        padding: EdgeInsets.only(
+          left: PaddingManager.pd12,
+          right: PaddingManager.pd12,
+          top: PaddingManager.pd24,
+        ),
         child: Column(
           children: [
-            CustomAppBar(),
+            SizedBox(
+              height: HeightManager.h30,
+            ),
+            const CustomAppBar(),
             TextFieldCustom(
-              text: "Title",
+              text: TextManager.kTitle,
               maxlines: 1,
-              size: 40,
+              size: FontSizeManager.font45,
             ),
             TextFieldCustom(
-              text: "Type something...",
+              text: TextManager.kSubTitle,
               maxlines: 10,
-              size: 20,
+              size: FontSizeManager.font20,
             ),
           ],
         ),
