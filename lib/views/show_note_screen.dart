@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/app_bar.dart';
-import 'package:note_demo/widgets/text_field_custom.dart';
+import 'package:note_demo/widgets/note_form_view.dart';
 
-class ShowNoteScreen extends StatelessWidget {
+class ShowNoteScreen extends StatefulWidget {
   const ShowNoteScreen({super.key});
   static String id = RouteManager.kShowscreen;
+
+  @override
+  State<ShowNoteScreen> createState() => _ShowNoteScreenState();
+}
+
+class _ShowNoteScreenState extends State<ShowNoteScreen> {
+  final GlobalKey<FormState> formkey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,17 +31,12 @@ class ShowNoteScreen extends StatelessWidget {
             SizedBox(
               height: HeightManager.h30,
             ),
-            const CustomAppBar(),
-            TextFieldCustom(
-              text: TextManager.kTitle,
-              maxlines: 1,
-              size: FontSizeManager.font45,
+            CustomAppBar(
+              formKey: formkey,
             ),
-            TextFieldCustom(
-              text: TextManager.kSubTitle,
-              maxlines: 10,
-              size: FontSizeManager.font20,
-            ),
+            NoteFromView(
+              formKey: formkey,
+            )
           ],
         ),
       ),

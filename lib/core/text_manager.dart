@@ -8,4 +8,8 @@ class TextManager {
   static String kSubTitle = "Type something...";
   static String kBack = "Back";
   static String kEmptyScreen = "Create your first note !";
+  static String kOk = "Ok";
+  static String kDelete = "Delete";
+  static String kTitleModelSheet = "Should add title or desc";
+  static String kSave = "to save";
 }

@@ -58,9 +58,9 @@ class NoteItem extends StatelessWidget {
                   fontSize: FontSizeManager.font30),
             ),
             Text(
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              "Title 1lspprhpdpfpadgapejhgpjhfgahgdgjspps[][a[[an]hhhasopaspfj]]",
+              "Title 1lspprhpdpfpadgapejhgpjhfgahghhhasopaspfj]]",
               style: TextStyle(
                   fontFamily: FontFamilyManager.kInterFont,
                   color: kPrimaryColor,

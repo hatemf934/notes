@@ -7,16 +7,22 @@ class TextFieldCustom extends StatelessWidget {
       {super.key,
       required this.text,
       required this.maxlines,
-      required this.size});
+      required this.size,
+      this.onsave,
+      this.validator});
   final String text;
   final int maxlines;
   final double size;
+  final Function(String?)? onsave;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(PaddingManager.pd16),
-      child: TextField(
+      child: TextFormField(
+        onSaved: onsave,
+        validator: validator,
         cursorColor: Colors.grey,
         decoration: InputDecoration(
           hintText: text,
