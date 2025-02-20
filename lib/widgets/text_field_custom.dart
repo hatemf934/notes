@@ -9,10 +9,12 @@ class TextFieldCustom extends StatelessWidget {
       required this.maxlines,
       required this.size,
       this.onsave,
-      this.validator});
+      this.validator,
+      required this.fontsize});
   final String text;
   final int maxlines;
   final double size;
+  final double fontsize;
   final Function(String?)? onsave;
   final String? Function(String?)? validator;
 
@@ -21,6 +23,8 @@ class TextFieldCustom extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(PaddingManager.pd16),
       child: TextFormField(
+        style: TextStyle(
+            fontSize: fontsize, fontFamily: FontFamilyManager.kNunitoFont),
         onSaved: onsave,
         validator: validator,
         cursorColor: Colors.grey,
