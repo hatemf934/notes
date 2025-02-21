@@ -1,5 +1,7 @@
 class HeightManager {
   HeightManager._();
+  static double h8 = 8;
+  static double h20 = 20;
   static double h30 = 30;
   static double h40 = 40;
   static double h70 = 70;
