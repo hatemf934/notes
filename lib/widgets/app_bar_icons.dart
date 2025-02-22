@@ -6,6 +6,7 @@ import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/buttonModelSheet/helper/show_model_button.dart';
 import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
+import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 
 class AppBarIcons extends StatelessWidget {
@@ -46,6 +47,7 @@ class AppBarIcons extends StatelessWidget {
                 );
                 BlocProvider.of<AddNotesCubit>(context)
                     .addNotesCubit(notemodel);
+                BlocProvider.of<DisplaynoteCubit>(context).displaynote();
               } else {
                 showModelButtonSheet(context);
               }

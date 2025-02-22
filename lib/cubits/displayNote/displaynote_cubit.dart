@@ -10,5 +10,6 @@ class DisplaynoteCubit extends Cubit<DisplaynoteState> {
   List<NoteModel>? note;
   displaynote() {
     note = HiveHelper().displayNotes();
+    emit(DisplaynoteSuccess());
   }
 }
