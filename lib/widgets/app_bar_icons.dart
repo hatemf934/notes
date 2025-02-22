@@ -9,11 +9,13 @@ import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 
 class AppBarIcons extends StatelessWidget {
-  const AppBarIcons(
-      {super.key,
-      required this.formKey,
-      required this.title,
-      required this.subTitle});
+  const AppBarIcons({
+    super.key,
+    required this.formKey,
+    required this.title,
+    required this.subTitle,
+  });
+
   final GlobalKey<FormState> formKey;
   final String title;
   final String subTitle;
@@ -31,14 +33,17 @@ class AppBarIcons extends StatelessWidget {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+
+                print("Title: $title, Subtitle: $subTitle");
+
                 var formattedDate =
                     DateFormat('MMMM dd, yyyy').format(DateTime.now());
                 var notemodel = NoteModel(
-                    title: title,
-                    subTitle: subTitle,
-                    date: formattedDate,
-                    color: Colors.blue.value,
-                    number: 1);
+                  title: title,
+                  subTitle: subTitle,
+                  date: formattedDate,
+                  color: Colors.blue.value,
+                );
                 BlocProvider.of<AddNotesCubit>(context)
                     .addNotesCubit(notemodel);
               } else {

@@ -4,11 +4,13 @@ import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/widgets/app_bar_icons.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar(
-      {super.key,
-      required this.formKey,
-      required this.title,
-      required this.subTitle});
+  const CustomAppBar({
+    super.key,
+    required this.formKey,
+    required this.title,
+    required this.subTitle,
+  });
+
   final GlobalKey<FormState> formKey;
   final String title;
   final String subTitle;
@@ -25,14 +27,13 @@ class CustomAppBar extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-
         Text(
           TextManager.kBack,
           style: TextStyle(
             fontFamily: FontFamilyManager.kOtamaFont,
             fontSize: FontSizeManager.font30,
           ),
-        ), // عنوان الشاشة
+        ),
         const Spacer(),
         AppBarIcons(
           title: title,

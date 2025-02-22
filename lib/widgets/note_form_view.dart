@@ -6,16 +6,23 @@ import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:note_demo/widgets/text_field_custom.dart';
 
 class NoteFromView extends StatefulWidget {
-  const NoteFromView({super.key, required this.formKey, required this.onSave});
+  const NoteFromView({
+    super.key,
+    required this.formKey,
+    required this.titleController,
+    required this.subTitleController,
+    // required this.onSaved,
+  });
   final GlobalKey<FormState> formKey;
-  final Function(String title, String subTitle) onSave;
+  // final Function(String?, String?) onSaved;
+  final TextEditingController titleController; // تحكم لعنوان النص
+  final TextEditingController subTitleController;
+
   @override
   State<NoteFromView> createState() => _NoteFromViewState();
 }
 
 class _NoteFromViewState extends State<NoteFromView> {
-  String? title, subTitle;
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -37,12 +44,10 @@ class _NoteFromViewState extends State<NoteFromView> {
             child: Column(
               children: [
                 TextFieldCustom(
-                  onsave: (value) {
-                    title = value;
-                  },
+                  controller: widget.titleController,
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return null;
+                      return "null";
                     } else {
                       return null;
                     }
@@ -53,9 +58,7 @@ class _NoteFromViewState extends State<NoteFromView> {
                   size: FontSizeManager.font45,
                 ),
                 TextFieldCustom(
-                  onsave: (value) {
-                    subTitle = value;
-                  },
+                  controller: widget.subTitleController,
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
                       return "null";

@@ -18,12 +18,28 @@ class ShowNoteScreen extends StatefulWidget {
 
 class _ShowNoteScreenState extends State<ShowNoteScreen> {
   final GlobalKey<FormState> formkey = GlobalKey();
-  String? title, subTitle;
-  void onSave(String title, String subtitle) {
-    setState(() {
-      this.title = title;
-      this.subTitle = subtitle;
-    });
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _subTitleController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _titleController.addListener(_updateAppBar);
+    _subTitleController.addListener(_updateAppBar);
+  }
+
+  @override
+  void dispose() {
+    _titleController.removeListener(_updateAppBar);
+    _subTitleController.removeListener(_updateAppBar);
+    _titleController.dispose();
+    _subTitleController.dispose();
+    super.dispose();
+  }
+
+  void _updateAppBar() {
+    setState(() {});
   }
 
   @override
@@ -44,13 +60,14 @@ class _ShowNoteScreenState extends State<ShowNoteScreen> {
                 height: HeightManager.h30,
               ),
               CustomAppBar(
-                title: title ?? "",
-                subTitle: subTitle ?? "",
+                title: _titleController.text,
+                subTitle: _subTitleController.text,
                 formKey: formkey,
               ),
               NoteFromView(
-                onSave: onSave,
                 formKey: formkey,
+                titleController: _titleController,
+                subTitleController: _subTitleController,
               )
             ],
           ),
