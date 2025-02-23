@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/buttonModelSheet/widget/IconControlButtonSheet.dart';
-import 'package:note_demo/buttonModelSheet/widget/TitleButtonSheet.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/editNoteView/widgets/edit_icon_button_sheet.dart';
+import 'package:note_demo/editNoteView/widgets/edit_title_button_sheet.dart';
 
-class ContentShowModel extends StatelessWidget {
-  const ContentShowModel({super.key});
+class EditContentButtonSheet extends StatelessWidget {
+  const EditContentButtonSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const TitleButtonSheet(),
+        const EditTitleButtonSheet(),
         Divider(
           height: HeightManager.h30,
           thickness: kthickness,
           color: Colors.grey,
         ),
-        const IconControlButtonSheet(),
+        const EditIconButtonSheet(),
       ],
     );
   }

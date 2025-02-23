@@ -62,7 +62,6 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
               formkey: formkey,
             ),
             EditNoteFormView(
-              formkey: formkey,
               titleController: _titleController,
               subTitleController: _subTitleController,
               note: note,

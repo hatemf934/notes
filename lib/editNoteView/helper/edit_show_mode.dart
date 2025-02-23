@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/buttonModelSheet/widget/content_button_sheet.dart';
+import 'package:note_demo/editNoteView/widgets/edit_content_button_sheet.dart';
 
-void showModelButtonSheet(BuildContext context) {
+void editShowModel(BuildContext context) {
   showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
@@ -21,7 +21,7 @@ void showModelButtonSheet(BuildContext context) {
           ),
           child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.2,
-              child: const ContentShowModel()),
+              child: const EditContentButtonSheet()),
         );
       });
 }
