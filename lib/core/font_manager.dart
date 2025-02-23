@@ -2,7 +2,9 @@ class FontSizeManager {
   FontSizeManager._();
   static double font12 = 12;
   static double font16 = 16;
+  static double font23 = 23;
   static double font30 = 30;
+  static double font35 = 35;
   static double font20 = 20;
   static double font25 = 25;
   static double font40 = 40;

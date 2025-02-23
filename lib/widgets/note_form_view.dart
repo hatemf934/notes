@@ -8,12 +8,12 @@ import 'package:note_demo/widgets/text_field_custom.dart';
 class NoteFromView extends StatefulWidget {
   const NoteFromView({
     super.key,
-    required this.formKey,
+    this.formKey,
     required this.titleController,
     required this.subTitleController,
     // required this.onSaved,
   });
-  final GlobalKey<FormState> formKey;
+  final GlobalKey<FormState>? formKey;
   // final Function(String?, String?) onSaved;
   final TextEditingController titleController; // تحكم لعنوان النص
   final TextEditingController subTitleController;

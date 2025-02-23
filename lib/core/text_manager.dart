@@ -7,6 +7,7 @@ class TextManager {
   static String kTitle = "Title";
   static String kSubTitle = "Type something...";
   static String kBack = "Back";
+  static String kCancel = "Cancel";
   static String kEmptyScreen = "Create your first note !";
   static String kOk = "Ok";
   static String kDelete = "Delete";

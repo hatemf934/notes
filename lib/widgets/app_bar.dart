@@ -6,12 +6,12 @@ import 'package:note_demo/widgets/app_bar_icons.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
-    required this.formKey,
+    this.formKey,
     required this.title,
     required this.subTitle,
   });
 
-  final GlobalKey<FormState> formKey;
+  final GlobalKey<FormState>? formKey;
   final String title;
   final String subTitle;
   @override
@@ -38,7 +38,7 @@ class CustomAppBar extends StatelessWidget {
         AppBarIcons(
           title: title,
           subTitle: subTitle,
-          formKey: formKey,
+          formKey: formKey!,
         ),
       ],
     );

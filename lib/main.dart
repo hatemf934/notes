@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
+import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
 import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
 import 'package:note_demo/views/show_note_screen.dart';
@@ -29,6 +30,7 @@ class NoteApp extends StatelessWidget {
         initialRoute: Onborading.id,
         routes: {
           Onborading.id: (context) => const Onborading(),
+          EditNoteScreen.id: (context) => const EditNoteScreen(),
           HomeScreen.id: (context) => const HomeScreen(),
           ShowNoteScreen.id: (context) => const ShowNoteScreen(),
         },
