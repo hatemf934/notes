@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/editNoteView/widgets/confirm_content_button_sheet.dart';
 
-void confirmModelSheet(
-    BuildContext context, String icondelete, String confirmdelete) {
+void confirmModelSheet({
+  required BuildContext context,
+  required String icondelete,
+  required String confirmdelete,
+  required Function() onPressed,
+}) {
   showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
@@ -23,7 +27,10 @@ void confirmModelSheet(
           child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.2,
               child: ConfirmContentButtonSheet(
-                  icondelete: icondelete, confirmdelete: confirmdelete)),
+                onPressed: onPressed,
+                icondelete: icondelete,
+                confirmdelete: confirmdelete,
+              )),
         );
       });
 }

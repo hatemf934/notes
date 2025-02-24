@@ -6,9 +6,13 @@ import 'package:note_demo/editNoteView/widgets/confirm_title_button_sheet.dart';
 
 class ConfirmContentButtonSheet extends StatelessWidget {
   const ConfirmContentButtonSheet(
-      {super.key, required this.icondelete, required this.confirmdelete});
+      {super.key,
+      required this.icondelete,
+      required this.confirmdelete,
+      required this.onPressed});
   final String icondelete;
   final String confirmdelete;
+  final Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,6 +27,7 @@ class ConfirmContentButtonSheet extends StatelessWidget {
           color: Colors.grey,
         ),
         ConfirmIconButtonSheet(
+          onPressed: onPressed,
           icondelete: icondelete,
         ),
       ],

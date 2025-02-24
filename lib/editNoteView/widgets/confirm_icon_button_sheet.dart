@@ -5,8 +5,10 @@ import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
 
 class ConfirmIconButtonSheet extends StatelessWidget {
-  const ConfirmIconButtonSheet({super.key, required this.icondelete});
+  const ConfirmIconButtonSheet(
+      {super.key, required this.icondelete, required this.onPressed});
   final String icondelete;
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class ConfirmIconButtonSheet extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: onPressed,
                 icon: Icon(
                   Icons.check_circle_outline_rounded,
                   color: kSecondaryColor,

@@ -18,6 +18,7 @@ class EditNoteScreen extends StatefulWidget {
 class _EditNoteScreenState extends State<EditNoteScreen> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _subTitleController = TextEditingController();
+  final GlobalKey<FormState> formkey = GlobalKey();
 
   @override
   void initState() {
@@ -42,7 +43,6 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
   Widget build(BuildContext context) {
     final NoteModel note =
         ModalRoute.of(context)!.settings.arguments as NoteModel;
-    final GlobalKey<FormState> formkey = GlobalKey();
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: Padding(
@@ -64,7 +64,6 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
             EditNoteFormView(
               titleController: _titleController,
               subTitleController: _subTitleController,
-              note: note,
             ),
           ]),
         ),

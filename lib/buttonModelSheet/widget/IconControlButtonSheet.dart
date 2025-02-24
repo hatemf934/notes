@@ -14,6 +14,7 @@ class IconControlButtonSheet extends StatelessWidget {
         IconButton(
             onPressed: () {
               Navigator.pop(context);
+              Navigator.pop(context);
             },
             icon: Icon(
               Icons.check_circle_outline_rounded,
