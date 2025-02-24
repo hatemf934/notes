@@ -73,7 +73,13 @@ class EditIconButtonSheet extends StatelessWidget {
             IconButton(
                 onPressed: () {
                   confirmModelSheet(
-                    onPressed: () {},
+                    onPressed: () {
+                      note.delete();
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                      BlocProvider.of<DisplaynoteCubit>(context).displaynote();
+                    },
                     context: context,
                     icondelete: TextManager.kIconDelete,
                     confirmdelete: TextManager.kConfirmDelete,
