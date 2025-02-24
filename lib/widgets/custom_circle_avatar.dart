@@ -10,7 +10,10 @@ class CustomCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, HomeScreen.id);
+        Navigator.pushNamed(context, HomeScreen.id).then((_) {
+          // إخفاء لوحة المفاتيح بعد الانتقال
+          FocusScope.of(context).unfocus();
+        });
       },
       child: CircleAvatar(
         radius: RadiusManager.rd35,

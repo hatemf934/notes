@@ -8,24 +8,26 @@ class IconControlButtonSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.check_circle_outline_rounded,
-              color: kSecondaryColor,
-              size: FontSizeManager.font40,
-            )),
-        Text(
-          TextManager.kOk,
-          style: const TextStyle(color: Colors.grey),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.check_circle_outline_rounded,
+                color: kSecondaryColor,
+                size: FontSizeManager.font40,
+              )),
+          Text(
+            TextManager.kOk,
+            style: const TextStyle(color: Colors.grey),
+          ),
+        ],
+      ),
     );
   }
 }

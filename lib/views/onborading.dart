@@ -10,6 +10,7 @@ import 'package:note_demo/widgets/custom_circle_avatar.dart';
 class Onborading extends StatelessWidget {
   const Onborading({super.key});
   static String id = RouteManager.kOnbording;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

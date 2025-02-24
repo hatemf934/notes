@@ -15,8 +15,7 @@ class ConfirmContentButtonSheet extends StatelessWidget {
   final Function() onPressed;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return ListView(
       children: [
         ConfirmTitleButtonSheet(
           confirmdelete: confirmdelete,

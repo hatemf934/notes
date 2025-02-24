@@ -12,6 +12,8 @@ import 'package:note_demo/views/show_note_screen.dart';
 void main() async {
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
+  // إخفاء الكيبورد تلقائيًا قبل تشغيل التطبيق
+
   Hive.registerAdapter(NoteModelAdapter());
   // await Hive.deleteBoxFromDisk(kNotes);
   await Hive.openBox<NoteModel>(kNotes);

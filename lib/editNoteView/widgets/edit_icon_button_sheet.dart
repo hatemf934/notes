@@ -27,43 +27,45 @@ class EditIconButtonSheet extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            IconButton(
-                onPressed: () {
-                  confirmModelSheet(
-                    onPressed: () {
-                      if (formkey.currentState != null &&
-                          formkey.currentState!.validate()) {
-                        note.title = titleController.text;
-                        note.subTitle = subTitleController.text;
-                        note.save();
-                        Navigator.pop(context);
-                        Navigator.pop(context);
-                        Navigator.pop(context);
-                        BlocProvider.of<DisplaynoteCubit>(context)
-                            .displaynote();
-                      } else {
-                        Navigator.pop(context);
-                        showModelButtonSheet(context);
-                      }
-                    },
-                    context: context,
-                    icondelete: TextManager.kIconSave,
-                    confirmdelete: TextManager.kConfirmEdit,
-                  );
-                },
-                icon: Icon(
-                  Icons.edit_note_rounded,
-                  color: kSecondaryColor,
-                  size: FontSizeManager.font40,
-                )),
-            Text(
-              TextManager.kEdit,
-              style: const TextStyle(color: Colors.grey),
-            ),
-          ],
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    confirmModelSheet(
+                      onPressed: () {
+                        if (formkey.currentState != null &&
+                            formkey.currentState!.validate()) {
+                          note.title = titleController.text;
+                          note.subTitle = subTitleController.text;
+                          note.save();
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          BlocProvider.of<DisplaynoteCubit>(context)
+                              .displaynote();
+                        } else {
+                          Navigator.pop(context);
+                          showModelButtonSheet(context);
+                        }
+                      },
+                      context: context,
+                      icondelete: TextManager.kIconSave,
+                      confirmdelete: TextManager.kConfirmEdit,
+                    );
+                  },
+                  icon: Icon(
+                    Icons.edit_note_rounded,
+                    color: kSecondaryColor,
+                    size: FontSizeManager.font40,
+                  )),
+              Text(
+                TextManager.kEdit,
+                style: const TextStyle(color: Colors.grey),
+              ),
+            ],
+          ),
         ),
         SizedBox(
           width: WidthManager.w50,

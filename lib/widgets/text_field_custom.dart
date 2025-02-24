@@ -14,7 +14,7 @@ class TextFieldCustom extends StatelessWidget {
     this.onChanged,
   });
   final String? text;
-  final int maxlines;
+  final int? maxlines;
   final double size;
   final double fontsize;
   final String? Function(String?)? validator;
@@ -26,6 +26,7 @@ class TextFieldCustom extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(PaddingManager.pd16),
       child: TextFormField(
+        autofocus: true,
         onChanged: onChanged,
         controller: controller,
         style: TextStyle(

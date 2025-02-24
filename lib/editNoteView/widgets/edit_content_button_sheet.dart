@@ -18,8 +18,7 @@ class EditContentButtonSheet extends StatelessWidget {
   final NoteModel note;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return ListView(
       children: [
         const EditTitleButtonSheet(),
         Divider(

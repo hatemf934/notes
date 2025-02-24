@@ -43,29 +43,36 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
   Widget build(BuildContext context) {
     final NoteModel note =
         ModalRoute.of(context)!.settings.arguments as NoteModel;
-    return Scaffold(
-      backgroundColor: kPrimaryColor,
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: PaddingManager.pd12,
-          right: PaddingManager.pd12,
-          top: PaddingManager.pd24,
-        ),
-        child: Form(
-          key: formkey,
-          child: Column(children: [
-            SizedBox(height: HeightManager.h30),
-            EditCustomBar(
-              note: note,
-              subTitleController: _subTitleController,
-              titleController: _titleController,
-              formkey: formkey,
-            ),
-            EditNoteFormView(
-              titleController: _titleController,
-              subTitleController: _subTitleController,
-            ),
-          ]),
+    return GestureDetector(
+      onTap: () {
+        // إخفاء لوحة المفاتيح عند النقر خارج الـ TextField
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: kPrimaryColor,
+        body: Padding(
+          padding: EdgeInsets.only(
+            left: PaddingManager.pd12,
+            right: PaddingManager.pd12,
+            top: PaddingManager.pd24,
+          ),
+          child: Form(
+            key: formkey,
+            child: ListView(children: [
+              SizedBox(height: HeightManager.h10),
+              EditCustomBar(
+                note: note,
+                subTitleController: _subTitleController,
+                titleController: _titleController,
+                formkey: formkey,
+              ),
+              EditNoteFormView(
+                note: note,
+                titleController: _titleController,
+                subTitleController: _subTitleController,
+              ),
+            ]),
+          ),
         ),
       ),
     );

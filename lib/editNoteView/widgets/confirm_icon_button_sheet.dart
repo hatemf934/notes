@@ -15,21 +15,23 @@ class ConfirmIconButtonSheet extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            IconButton(
-                onPressed: onPressed,
-                icon: Icon(
-                  Icons.check_circle_outline_rounded,
-                  color: kSecondaryColor,
-                  size: FontSizeManager.font40,
-                )),
-            Text(
-              icondelete,
-              style: const TextStyle(color: Colors.grey),
-            ),
-          ],
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                  onPressed: onPressed,
+                  icon: Icon(
+                    Icons.check_circle_outline_rounded,
+                    color: kSecondaryColor,
+                    size: FontSizeManager.font40,
+                  )),
+              Text(
+                icondelete,
+                style: const TextStyle(color: Colors.grey),
+              ),
+            ],
+          ),
         ),
         SizedBox(
           width: WidthManager.w50,

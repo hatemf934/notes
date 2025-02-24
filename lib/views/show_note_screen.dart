@@ -24,7 +24,6 @@ class _ShowNoteScreenState extends State<ShowNoteScreen> {
   @override
   void initState() {
     super.initState();
-
     _titleController.addListener(_updateAppBar);
     _subTitleController.addListener(_updateAppBar);
   }
@@ -46,30 +45,36 @@ class _ShowNoteScreenState extends State<ShowNoteScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNotesCubit(),
-      child: Scaffold(
-        backgroundColor: kPrimaryColor,
-        body: Padding(
-          padding: EdgeInsets.only(
-            left: PaddingManager.pd12,
-            right: PaddingManager.pd12,
-            top: PaddingManager.pd24,
-          ),
-          child: Column(
-            children: [
-              SizedBox(
-                height: HeightManager.h30,
-              ),
-              CustomAppBar(
-                title: _titleController.text,
-                subTitle: _subTitleController.text,
-                formKey: formkey,
-              ),
-              NoteFromView(
-                formKey: formkey,
-                titleController: _titleController,
-                subTitleController: _subTitleController,
-              )
-            ],
+      child: GestureDetector(
+        onTap: () {
+          // إخفاء لوحة المفاتيح عند النقر خارج الـ TextField
+          FocusScope.of(context).unfocus();
+        },
+        child: Scaffold(
+          backgroundColor: kPrimaryColor,
+          body: Padding(
+            padding: EdgeInsets.only(
+              left: PaddingManager.pd12,
+              right: PaddingManager.pd12,
+              top: PaddingManager.pd24,
+            ),
+            child: ListView(
+              children: [
+                SizedBox(
+                  height: HeightManager.h10,
+                ),
+                CustomAppBar(
+                  title: _titleController.text,
+                  subTitle: _subTitleController.text,
+                  formKey: formkey,
+                ),
+                NoteFromView(
+                  formKey: formkey,
+                  titleController: _titleController,
+                  subTitleController: _subTitleController,
+                )
+              ],
+            ),
           ),
         ),
       ),

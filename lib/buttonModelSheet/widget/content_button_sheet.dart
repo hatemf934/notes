@@ -9,8 +9,7 @@ class ContentShowModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return ListView(
       children: [
         const TitleButtonSheet(),
         Divider(

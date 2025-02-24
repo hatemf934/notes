@@ -30,7 +30,11 @@ class CustomFloatingActionButton extends StatelessWidget {
           splashColor: kSecondaryColor,
           backgroundColor: kSecondaryColor,
           onPressed: () {
-            Navigator.pushNamed(context, ShowNoteScreen.id);
+            Navigator.pushNamed(context, ShowNoteScreen.id).then((_) {
+              // إخفاء لوحة المفاتيح بعد الانتقال
+              FocusScope.of(context).unfocus();
+            });
+            ;
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
