@@ -12,11 +12,13 @@ class TextFieldCustom extends StatelessWidget {
     required this.fontsize,
     this.controller,
     this.onChanged,
+    required this.autofocus,
   });
   final String? text;
   final int? maxlines;
   final double size;
   final double fontsize;
+  final bool autofocus;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
   final Function(String)? onChanged;
@@ -26,7 +28,7 @@ class TextFieldCustom extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(PaddingManager.pd16),
       child: TextFormField(
-        autofocus: true,
+        autofocus: autofocus,
         onChanged: onChanged,
         controller: controller,
         style: TextStyle(

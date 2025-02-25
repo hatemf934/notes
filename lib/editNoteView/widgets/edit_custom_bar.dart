@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
-import 'package:note_demo/editNoteView/helper/edit_show_mode.dart';
 import 'package:note_demo/models/note_model.dart';
-import 'package:note_demo/widgets/custom_icon_button.dart';
+import 'package:note_demo/editNoteView/widgets/CustomPopupMenu.dart';
 
 class EditCustomBar extends StatelessWidget {
   const EditCustomBar(
@@ -36,15 +35,11 @@ class EditCustomBar extends StatelessWidget {
         ),
       ),
       const Spacer(),
-      IconButtonCustom(
-        onPressed: () {
-          editShowModel(
-              context: context,
-              formkey: formkey,
-              titleController: titleController,
-              subTitleController: subTitleController,
-              note: note);
-        },
+      CustomPopupMenu(
+        note: note,
+        formkey: formkey,
+        titleController: titleController,
+        subTitleController: subTitleController,
       ),
     ]);
   }

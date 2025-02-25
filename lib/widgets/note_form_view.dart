@@ -44,6 +44,7 @@ class _NoteFromViewState extends State<NoteFromView> {
               child: Column(
                 children: [
                   TextFieldCustom(
+                    autofocus: true,
                     controller: widget.titleController,
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
@@ -58,6 +59,7 @@ class _NoteFromViewState extends State<NoteFromView> {
                     size: FontSizeManager.font45,
                   ),
                   TextFieldCustom(
+                    autofocus: true,
                     controller: widget.subTitleController,
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {

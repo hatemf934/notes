@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/editNoteView/widgets/edit_custom_bar.dart';
@@ -59,7 +58,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
           child: Form(
             key: formkey,
             child: ListView(children: [
-              SizedBox(height: HeightManager.h10),
+              // SizedBox(height: HeightManager.h10),
               EditCustomBar(
                 note: note,
                 subTitleController: _subTitleController,

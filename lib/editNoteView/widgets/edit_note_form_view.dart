@@ -22,6 +22,7 @@ class EditNoteFormView extends StatelessWidget {
       child: Column(
         children: [
           TextFieldCustom(
+            autofocus: false,
             controller: titleController,
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
@@ -36,6 +37,7 @@ class EditNoteFormView extends StatelessWidget {
             size: FontSizeManager.font45,
           ),
           TextFieldCustom(
+            autofocus: false,
             controller: subTitleController,
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
