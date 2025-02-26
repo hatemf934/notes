@@ -7,6 +7,7 @@ import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
+import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/widgets/custom_floating_action_button.dart';
 import 'package:note_demo/widgets/custom_grid_view.dart';
 
@@ -37,12 +38,25 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: HeightManager.h30,
               ),
-              Text(
-                TextManager.kNotesHome,
-                style: TextStyle(
-                    fontFamily: FontFamilyManager.kOtamaFont,
-                    fontSize: FontSizeManager.font30,
-                    fontWeight: FontWeight.bold),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    TextManager.kNotesHome,
+                    style: TextStyle(
+                        fontFamily: FontFamilyManager.kOtamaFont,
+                        fontSize: FontSizeManager.font30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, SettingsScreen.id);
+                      },
+                      icon: Icon(
+                        Icons.settings_outlined,
+                        size: FontSizeManager.font30,
+                      ))
+                ],
               ),
               const Expanded(child: CustomGridView())
             ],

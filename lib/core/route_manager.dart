@@ -4,4 +4,5 @@ class RouteManager {
   static String kHomescreen = "homepage";
   static String kShowscreen = "showscreen";
   static String kEditNote = "editnote";
+  static String kSettingsScreen = "settingscreen";
 }

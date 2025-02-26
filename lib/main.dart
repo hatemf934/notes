@@ -5,6 +5,7 @@ import 'package:note_demo/constant.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
+import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
 import 'package:note_demo/views/show_note_screen.dart';
@@ -12,10 +13,7 @@ import 'package:note_demo/views/show_note_screen.dart';
 void main() async {
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
-  // إخفاء الكيبورد تلقائيًا قبل تشغيل التطبيق
-
   Hive.registerAdapter(NoteModelAdapter());
-  // await Hive.deleteBoxFromDisk(kNotes);
   await Hive.openBox<NoteModel>(kNotes);
   runApp(const NoteApp());
 }
@@ -35,6 +33,7 @@ class NoteApp extends StatelessWidget {
           EditNoteScreen.id: (context) => const EditNoteScreen(),
           HomeScreen.id: (context) => const HomeScreen(),
           ShowNoteScreen.id: (context) => const ShowNoteScreen(),
+          SettingsScreen.id: (context) => const SettingsScreen(),
         },
       ),
     );
