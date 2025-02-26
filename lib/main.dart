@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
+import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
@@ -32,6 +33,9 @@ class NoteApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ThemeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => LayoutcubitCubit(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(

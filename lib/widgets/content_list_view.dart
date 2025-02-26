@@ -4,47 +4,39 @@ import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/models/note_model.dart';
 
-class ContentNoteTips extends StatelessWidget {
-  const ContentNoteTips({
-    super.key,
-    required this.noteModel,
-  });
+class ContentListView extends StatelessWidget {
+  const ContentListView({super.key, required this.noteModel});
   final NoteModel noteModel;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
           noteModel.title,
           style: TextStyle(
+              overflow: TextOverflow.ellipsis,
               fontFamily: FontFamilyManager.kOtamaFont,
               color: kPrimaryColor,
               fontSize: FontSizeManager.font30),
         ),
-        SizedBox(height: HeightManager.h8),
-        Expanded(
-          child: Text(
-            noteModel.subTitle,
-            maxLines: 4,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                fontFamily: FontFamilyManager.kInterFont,
-                color: Colors.grey,
-                fontSize: FontSizeManager.font16),
-          ),
+        SizedBox(height: HeightManager.h10),
+        Text(
+          noteModel.subTitle,
+          style: TextStyle(
+              overflow: TextOverflow.ellipsis,
+              fontFamily: FontFamilyManager.kInterFont,
+              color: Colors.grey,
+              fontSize: FontSizeManager.font20),
         ),
-        SizedBox(height: HeightManager.h20),
+        SizedBox(height: HeightManager.h8),
         Text(
           noteModel.date,
           style: TextStyle(
               fontFamily: FontFamilyManager.kInterFont,
               color: Colors.grey,
-              fontSize: FontSizeManager.font12),
-        ),
+              fontSize: FontSizeManager.font10),
+        )
       ],
     );
   }

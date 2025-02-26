@@ -6,9 +6,11 @@ import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
+import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/widgets/custom_floating_action_button.dart';
 import 'package:note_demo/widgets/custom_grid_view.dart';
+import 'package:note_demo/widgets/custom_list_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: HeightManager.h30,
+                height: HeightManager.h20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +58,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ))
                 ],
               ),
-              const Expanded(child: CustomGridView())
+              BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
+                builder: (context, state) {
+                  if (state == LayoutcubitState.grid) {
+                    return const Expanded(child: CustomGridView());
+                  } else if (state == LayoutcubitState.list) {
+                    return const Expanded(child: CustomListView());
+                  } else {
+                    return const Center(
+                        child: Text(
+                      "this is error",
+                      style: TextStyle(fontSize: 32),
+                    ));
+                  }
+                },
+              )
             ],
           ),
         ),

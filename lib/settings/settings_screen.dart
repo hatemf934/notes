@@ -5,6 +5,7 @@ import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/settings/core/text_settings_manager.dart';
 import 'package:note_demo/settings/widget/setting_Popup_Menu.dart';
@@ -112,8 +113,20 @@ class RowStyleSetting extends StatelessWidget {
           minHeight: 50,
           minWidth: 200,
           itemBuilder: [
-            PopupMenuItem(child: TextButtonPopItem(textpop: "Grid view")),
-            PopupMenuItem(child: TextButtonPopItem(textpop: "List view")),
+            PopupMenuItem(
+                child: TextButtonPopItem(
+              onPressed: () {
+                BlocProvider.of<LayoutcubitCubit>(context).changeGridview();
+              },
+              textpop: "Grid view",
+            )),
+            PopupMenuItem(
+                child: TextButtonPopItem(
+              onPressed: () {
+                BlocProvider.of<LayoutcubitCubit>(context).changeListview();
+              },
+              textpop: "List view",
+            )),
           ],
           fontsize: TextSettingsManager.kLayout,
           meduim: TextSettingsManager.kGridView,
