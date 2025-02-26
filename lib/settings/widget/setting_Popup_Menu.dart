@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/constant.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/settings/settings_screen.dart';
 
@@ -20,7 +19,6 @@ class SettingPopupMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
         elevation: 5.0,
-        color: kPrimaryColor,
         constraints: BoxConstraints(
           minWidth: minWidth,
           minHeight: minHeight,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/constant.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/settings/core/text_settings_manager.dart';
 import 'package:note_demo/settings/widget/setting_Popup_Menu.dart';
 
@@ -14,27 +15,29 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor,
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              size: FontSizeManager.font30,
-            )),
-        backgroundColor: Colors.transparent,
-      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: PaddingManager.pd24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: HeightManager.h30,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                size: FontSizeManager.font30,
+              ),
+            ),
+            SizedBox(
+              height: HeightManager.h30,
+            ),
             Text(
               TextManager.kNotesHome,
               style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
                   fontFamily: FontFamilyManager.kNunitoFont,
                   fontSize: FontSizeManager.font40),
             ),
@@ -95,9 +98,9 @@ class RowStyleSetting extends StatelessWidget {
           minHeight: 120,
           minWidth: 160,
           itemBuilder: [
-            PopupMenuItem(child: Text("small")),
-            PopupMenuItem(child: Text("data")),
-            PopupMenuItem(child: Text("large")),
+            PopupMenuItem(child: TextButtonPopItem(textpop: "Small")),
+            PopupMenuItem(child: TextButtonPopItem(textpop: "Medium")),
+            PopupMenuItem(child: TextButtonPopItem(textpop: "Large")),
           ],
           fontsize: TextSettingsManager.kFontSize,
           meduim: TextSettingsManager.kMedium,
@@ -122,8 +125,22 @@ class RowStyleSetting extends StatelessWidget {
           minHeight: 50,
           minWidth: 200,
           itemBuilder: [
-            PopupMenuItem(child: TextButtonPopItem(textpop: "Dark")),
-            PopupMenuItem(child: TextButtonPopItem(textpop: "Light")),
+            PopupMenuItem(
+                child: TextButtonPopItem(
+              onPressed: () {
+                BlocProvider.of<ThemeCubit>(context).changedarkTheme();
+                Navigator.pop(context);
+              },
+              textpop: "Dark",
+            )),
+            PopupMenuItem(
+              child: TextButtonPopItem(
+                  onPressed: () {
+                    BlocProvider.of<ThemeCubit>(context).changelightTheme();
+                    Navigator.pop(context);
+                  },
+                  textpop: "Light"),
+            ),
           ],
           fontsize: TextSettingsManager.kTheme,
           meduim: TextSettingsManager.kDark,
@@ -149,14 +166,13 @@ class RowItemFontStyle extends StatelessWidget {
         Text(
           fontsize,
           style: TextStyle(
-              fontSize: FontSizeManager.font20,
-              color: Colors.black.withOpacity(0.7)),
+            fontSize: FontSizeManager.font20,
+          ),
         ),
         const Spacer(),
         Text(medium,
             style: TextStyle(
                 fontSize: FontSizeManager.font20,
-                color: Colors.grey,
                 fontFamily: FontFamilyManager.kNunitoFont)),
         Icon(Icons.arrow_upward_outlined, color: Colors.grey.withOpacity(0.6))
       ],
@@ -165,19 +181,18 @@ class RowItemFontStyle extends StatelessWidget {
 }
 
 class TextButtonPopItem extends StatelessWidget {
-  const TextButtonPopItem({super.key, required this.textpop});
+  const TextButtonPopItem({super.key, required this.textpop, this.onPressed});
   final String textpop;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
+        onPressed: onPressed,
         child: Text(
           textpop,
           style: TextStyle(
             fontSize: FontSizeManager.font16,
-            color: Colors.black,
+            color: Colors.grey,
           ),
         ));
   }

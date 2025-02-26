@@ -14,7 +14,6 @@ class Onborading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: EdgeInsets.all(PaddingManager.pd16),
         child: Column(
@@ -24,7 +23,6 @@ class Onborading extends StatelessWidget {
             Text(
               TextManager.kTitleBording,
               style: TextStyle(
-                color: kSecondaryColor,
                 fontFamily: FontFamilyManager.kOtamaFont,
                 fontSize: FontSizeManager.font48,
               ),
@@ -36,7 +34,6 @@ class Onborading extends StatelessWidget {
               textAlign: TextAlign.center,
               TextManager.kSubTitleBording,
               style: TextStyle(
-                  color: kSecondaryColor,
                   fontFamily: FontFamilyManager.kRobotoFont,
                   fontSize: FontSizeManager.font16,
                   fontWeight: FontWeight.w400),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/constant.dart';
 import 'package:note_demo/core/height_width_manager.dart';
 import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
@@ -51,7 +50,6 @@ class _ShowNoteScreenState extends State<ShowNoteScreen> {
           FocusScope.of(context).unfocus();
         },
         child: Scaffold(
-          backgroundColor: kPrimaryColor,
           body: Padding(
             padding: EdgeInsets.only(
               left: PaddingManager.pd12,

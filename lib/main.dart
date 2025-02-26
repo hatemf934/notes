@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
+import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
+import 'package:note_demo/models/theme_model.dart';
 import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
@@ -23,17 +25,31 @@ class NoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DisplaynoteCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: Onborading.id,
-        routes: {
-          Onborading.id: (context) => const Onborading(),
-          EditNoteScreen.id: (context) => const EditNoteScreen(),
-          HomeScreen.id: (context) => const HomeScreen(),
-          ShowNoteScreen.id: (context) => const ShowNoteScreen(),
-          SettingsScreen.id: (context) => const SettingsScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => DisplaynoteCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeCubitState>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            initialRoute: Onborading.id,
+            routes: {
+              Onborading.id: (context) => const Onborading(),
+              EditNoteScreen.id: (context) => const EditNoteScreen(),
+              HomeScreen.id: (context) => const HomeScreen(),
+              ShowNoteScreen.id: (context) => const ShowNoteScreen(),
+              SettingsScreen.id: (context) => const SettingsScreen(),
+            },
+            theme: state == ThemeCubitState.light
+                ? ModelTheme().lightmode
+                : ModelTheme().darkmode,
+          );
         },
       ),
     );

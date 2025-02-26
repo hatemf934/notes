@@ -13,7 +13,7 @@ class CustomTextIcon extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            color: Colors.black,
+            color: Colors.grey,
             fontSize: FontSizeManager.font20,
             fontFamily: FontFamilyManager.kOtamaFont),
       ),
