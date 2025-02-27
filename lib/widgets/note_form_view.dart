@@ -53,7 +53,9 @@ class _NoteFromViewState extends State<NoteFromView> {
                         return null;
                       }
                     },
-                    fontsize: 35,
+                    style: TextStyle(
+                        fontSize: FontSizeManager.font35,
+                        fontFamily: FontFamilyManager.kNunitoFont),
                     text: TextManager.kTitle,
                     maxlines: 1,
                     size: FontSizeManager.font45,
@@ -68,7 +70,9 @@ class _NoteFromViewState extends State<NoteFromView> {
                         return null;
                       }
                     },
-                    fontsize: 23,
+                    style: TextStyle(
+                        fontSize: FontSizeManager.font23,
+                        fontFamily: FontFamilyManager.kNunitoFont),
                     text: TextManager.kSubTitle,
                     maxlines: null,
                     size: FontSizeManager.font20,

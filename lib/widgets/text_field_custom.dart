@@ -9,15 +9,15 @@ class TextFieldCustom extends StatelessWidget {
     required this.maxlines,
     required this.size,
     this.validator,
-    required this.fontsize,
     this.controller,
     this.onChanged,
     required this.autofocus,
+    required this.style,
   });
   final String? text;
   final int? maxlines;
   final double size;
-  final double fontsize;
+  final TextStyle style;
   final bool autofocus;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
@@ -31,8 +31,7 @@ class TextFieldCustom extends StatelessWidget {
         autofocus: autofocus,
         onChanged: onChanged,
         controller: controller,
-        style: TextStyle(
-            fontSize: fontsize, fontFamily: FontFamilyManager.kNunitoFont),
+        style: style,
         validator: validator,
         cursorColor: Colors.grey,
         decoration: InputDecoration(

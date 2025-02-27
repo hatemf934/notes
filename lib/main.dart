@@ -5,6 +5,7 @@ import 'package:note_demo/constant.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
+import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
 import 'package:note_demo/models/theme_model.dart';
@@ -36,6 +37,9 @@ class NoteApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LayoutcubitCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ThemetextCubit(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(
