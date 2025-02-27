@@ -14,4 +14,5 @@ class TextManager {
   static String kDelete = "Delete";
   static String kTitleModelSheet = "Should add title or desc";
   static String kSave = "to save";
+  static String kTryAgain = "Something is wrong , please try again";
 }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
+import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
@@ -15,6 +18,21 @@ import 'package:note_demo/views/onborading.dart';
 import 'package:note_demo/views/show_note_screen.dart';
 
 void main() async {
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.error, color: Colors.red, size: FontSizeManager.font48),
+          SizedBox(height: HeightManager.h20),
+          Text(TextManager.kTryAgain,
+              style: TextStyle(
+                  color: Colors.red, fontSize: FontSizeManager.font20),
+              textAlign: TextAlign.center)
+        ],
+      ),
+    );
+  };
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(NoteModelAdapter());
