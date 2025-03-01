@@ -5,13 +5,20 @@ import 'package:note_demo/core/padding_manager.dart';
 import 'package:note_demo/core/route_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/settings/core/text_settings_manager.dart';
+import 'package:note_demo/settings/widget/Popup_Menu_Item_With_Feedback.dart';
 import 'package:note_demo/settings/widget/row_style_setting.dart';
 import 'package:note_demo/settings/widget/setting_Popup_Menu.dart';
-import 'package:note_demo/settings/widget/text_button_pop_item.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
   static String id = RouteManager.kSettingsScreen;
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,11 +68,15 @@ class SettingsScreen extends StatelessWidget {
               minWidth: 200,
               itemBuilder: [
                 PopupMenuItem(
-                    child: TextButtonPopItem(
-                        textpop: TextSettingsManager.kArabic)),
+                    child: PopupMenuItemWithFeedback(
+                  onPressed: () {},
+                  text: TextSettingsManager.kArabic,
+                )),
                 PopupMenuItem(
-                    child: TextButtonPopItem(
-                        textpop: TextSettingsManager.kEnglish)),
+                    child: PopupMenuItemWithFeedback(
+                  onPressed: () {},
+                  text: TextSettingsManager.kEnglish,
+                )),
               ],
               fontsize: TextSettingsManager.kLanguage,
               meduim: TextSettingsManager.kArabic,

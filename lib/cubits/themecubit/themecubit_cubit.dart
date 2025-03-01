@@ -3,16 +3,17 @@ import 'package:bloc/bloc.dart';
 part 'themecubit_state.dart';
 
 class ThemeCubit extends Cubit<ThemeCubitState> {
-  ThemeCubit() : super(ThemeCubitState.light);
+  ThemeCubit() : super(ThemeCubitState.Light);
+
   changedarkTheme() {
-    if (state == ThemeCubitState.light) {
-      emit(ThemeCubitState.dark);
+    if (state == ThemeCubitState.Light) {
+      emit(ThemeCubitState.Dark);
     }
   }
 
   changelightTheme() {
-    if (state == ThemeCubitState.dark) {
-      emit(ThemeCubitState.light);
+    if (state == ThemeCubitState.Dark) {
+      emit(ThemeCubitState.Light);
     }
   }
 }

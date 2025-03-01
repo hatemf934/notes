@@ -24,19 +24,19 @@ class EditNoteFormView extends StatelessWidget {
       builder: (context, state) {
         TextStyle currentTextStyle;
         switch (state) {
-          case ThemeTextCubitState.small:
+          case ThemeTextCubitState.Small:
             currentTextStyle = TextStyle(
               fontSize: FontSizeManager.font16,
               fontFamily: FontFamilyManager.kNunitoFont,
             );
             break;
-          case ThemeTextCubitState.medium:
+          case ThemeTextCubitState.Medium:
             currentTextStyle = TextStyle(
               fontSize: FontSizeManager.font35,
               fontFamily: FontFamilyManager.kNunitoFont,
             );
             break;
-          case ThemeTextCubitState.large:
+          case ThemeTextCubitState.Large:
             currentTextStyle = TextStyle(
               fontSize: FontSizeManager.font48,
               fontFamily: FontFamilyManager.kNunitoFont,

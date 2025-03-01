@@ -10,12 +10,6 @@ class HiveHelper {
 
   List<NoteModel> displayNotes() {
     var displayBox = Hive.box<NoteModel>(kNotes);
-    print(displayBox.values.toList());
     return displayBox.values.toList();
   }
-}
-
-List<NoteModel> displayNotes() {
-  var displayBox = Hive.box<NoteModel>(kNotes);
-  return displayBox.values.toList(); // تعديل هنا لإعادة القائمة بشكل صحيح
 }

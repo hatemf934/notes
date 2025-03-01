@@ -10,6 +10,11 @@ class DisplaynoteCubit extends Cubit<DisplaynoteState> {
   List<NoteModel>? note;
   displaynote() {
     note = HiveHelper().displayNotes();
-    emit(DisplaynoteSuccess());
+
+    if (note == null || note!.isEmpty) {
+      emit(DisplaynotesEmpty());
+    } else {
+      emit(DisplaynoteSuccess());
+    }
   }
 }

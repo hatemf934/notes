@@ -11,6 +11,7 @@ import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/widgets/custom_floating_action_button.dart';
 import 'package:note_demo/widgets/custom_grid_view.dart';
 import 'package:note_demo/widgets/custom_list_view.dart';
+import 'package:note_demo/widgets/empty_notes.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -58,18 +59,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       ))
                 ],
               ),
-              BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
+              BlocBuilder<DisplaynoteCubit, DisplaynoteState>(
                 builder: (context, state) {
-                  if (state == LayoutcubitState.grid) {
-                    return const Expanded(child: CustomGridView());
-                  } else if (state == LayoutcubitState.list) {
-                    return const Expanded(child: CustomListView());
+                  if (state is DisplaynotesEmpty) {
+                    return const EmptyNotes();
                   } else {
-                    return const Center(
-                        child: Text(
-                      "this is error",
-                      style: TextStyle(fontSize: 32),
-                    ));
+                    return BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
+                      builder: (context, state) {
+                        if (state == LayoutcubitState.GridView) {
+                          return const Expanded(child: CustomGridView());
+                        } else if (state == LayoutcubitState.ListView) {
+                          return const Expanded(child: CustomListView());
+                        } else {
+                          return const Center(
+                              child: Text(
+                            "this is error",
+                            style: TextStyle(fontSize: 32),
+                          ));
+                        }
+                      },
+                    );
                   }
                 },
               )

@@ -72,7 +72,7 @@ class NoteApp extends StatelessWidget {
               ShowNoteScreen.id: (context) => const ShowNoteScreen(),
               SettingsScreen.id: (context) => const SettingsScreen(),
             },
-            theme: state == ThemeCubitState.light
+            theme: state == ThemeCubitState.Light
                 ? ModelTheme().lightmode
                 : ModelTheme().darkmode,
           );

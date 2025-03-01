@@ -1,3 +1,3 @@
 part of 'layoutcubit_cubit.dart';
 
-enum LayoutcubitState { list, grid }
+enum LayoutcubitState { ListView, GridView }
