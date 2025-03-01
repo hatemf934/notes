@@ -32,13 +32,13 @@ class EditNoteFormView extends StatelessWidget {
             break;
           case ThemeTextCubitState.Medium:
             currentTextStyle = TextStyle(
-              fontSize: FontSizeManager.font35,
+              fontSize: FontSizeManager.font20,
               fontFamily: FontFamilyManager.kNunitoFont,
             );
             break;
           case ThemeTextCubitState.Large:
             currentTextStyle = TextStyle(
-              fontSize: FontSizeManager.font48,
+              fontSize: FontSizeManager.font30,
               fontFamily: FontFamilyManager.kNunitoFont,
             );
             break;
@@ -60,7 +60,7 @@ class EditNoteFormView extends StatelessWidget {
                 },
                 text: note.title,
                 style: TextStyle(
-                    fontSize: FontSizeManager.font35,
+                    fontSize: FontSizeManager.font30,
                     fontFamily: FontFamilyManager.kNunitoFont),
                 maxlines: 1,
                 size: FontSizeManager.font35,
@@ -77,7 +77,7 @@ class EditNoteFormView extends StatelessWidget {
                 },
                 text: note.subTitle,
                 style: currentTextStyle,
-                maxlines: 10,
+                maxlines: null,
                 size: FontSizeManager.font23,
               )
             ],

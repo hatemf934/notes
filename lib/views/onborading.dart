@@ -20,6 +20,9 @@ class Onborading extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(kImage),
+            SizedBox(
+              height: HeightManager.h30,
+            ),
             Text(
               TextManager.kTitleBording,
               style: TextStyle(

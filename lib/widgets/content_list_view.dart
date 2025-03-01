@@ -22,6 +22,7 @@ class ContentListView extends StatelessWidget {
         ),
         SizedBox(height: HeightManager.h10),
         Text(
+          maxLines: 1,
           noteModel.subTitle,
           style: TextStyle(
               overflow: TextOverflow.ellipsis,

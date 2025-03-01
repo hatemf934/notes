@@ -23,7 +23,7 @@ class ContentNoteTips extends StatelessWidget {
           style: TextStyle(
               fontFamily: FontFamilyManager.kOtamaFont,
               color: kPrimaryColor,
-              fontSize: FontSizeManager.font30),
+              fontSize: FontSizeManager.font20),
         ),
         SizedBox(height: HeightManager.h8),
         Expanded(
