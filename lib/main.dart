@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
@@ -19,20 +20,24 @@ import 'package:note_demo/views/show_note_screen.dart';
 
 void main() async {
   ErrorWidget.builder = (FlutterErrorDetails details) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.error, color: Colors.red, size: FontSizeManager.font48),
-          SizedBox(height: HeightManager.h20),
-          Text(TextManager.kTryAgain,
-              style: TextStyle(
-                  color: Colors.red, fontSize: FontSizeManager.font20),
-              textAlign: TextAlign.center)
-        ],
+    return Scaffold(
+      backgroundColor: kPrimaryColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.error, color: Colors.red, size: FontSizeManager.font48),
+            SizedBox(height: HeightManager.h20),
+            Text(TextManager.kTryAgain,
+                style: TextStyle(
+                    color: Colors.red, fontSize: FontSizeManager.font20),
+                textAlign: TextAlign.center)
+          ],
+        ),
       ),
     );
   };
+
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(NoteModelAdapter());
@@ -62,6 +67,17 @@ class NoteApp extends StatelessWidget {
       ],
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(
         builder: (context, state) {
+          SystemChrome.setSystemUIOverlayStyle(
+            SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent, // تغيير لون شريط الحالة
+              statusBarBrightness: state == ThemeCubitState.Light
+                  ? Brightness.dark
+                  : Brightness.light, // اختيار نص أبيض للحالة (للأزرق)
+              statusBarIconBrightness: state == ThemeCubitState.Light
+                  ? Brightness.dark
+                  : Brightness.light,
+            ),
+          );
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             initialRoute: Onborading.id,
