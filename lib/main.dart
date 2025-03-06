@@ -69,10 +69,10 @@ class NoteApp extends StatelessWidget {
         builder: (context, state) {
           SystemChrome.setSystemUIOverlayStyle(
             SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent, // تغيير لون شريط الحالة
+              statusBarColor: Colors.transparent,
               statusBarBrightness: state == ThemeCubitState.Light
                   ? Brightness.dark
-                  : Brightness.light, // اختيار نص أبيض للحالة (للأزرق)
+                  : Brightness.light,
               statusBarIconBrightness: state == ThemeCubitState.Light
                   ? Brightness.dark
                   : Brightness.light,

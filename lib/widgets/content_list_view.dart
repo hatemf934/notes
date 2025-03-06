@@ -15,17 +15,16 @@ class ContentListView extends StatelessWidget {
         Text(
           noteModel.title,
           style: TextStyle(
-              overflow: TextOverflow.ellipsis,
               fontFamily: FontFamilyManager.kOtamaFont,
               color: kPrimaryColor,
               fontSize: FontSizeManager.font30),
         ),
         SizedBox(height: HeightManager.h10),
         Text(
-          maxLines: 1,
+          maxLines: 6,
+          overflow: TextOverflow.ellipsis,
           noteModel.subTitle,
           style: TextStyle(
-              overflow: TextOverflow.ellipsis,
               fontFamily: FontFamilyManager.kInterFont,
               color: Colors.grey,
               fontSize: FontSizeManager.font20),
