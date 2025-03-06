@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_demo/buttonModelSheet/helper/show_model_button.dart';
 import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
-import 'package:note_demo/editNoteView/widgets/CustomPopupMenu.dart';
+import 'package:note_demo/widgets/custom_icon_button.dart';
 
 class EditCustomBar extends StatelessWidget {
   const EditCustomBar(
@@ -35,11 +38,20 @@ class EditCustomBar extends StatelessWidget {
         ),
       ),
       const Spacer(),
-      CustomPopupMenu(
-        note: note,
-        formkey: formkey,
-        titleController: titleController,
-        subTitleController: subTitleController,
+      IconButtonCustom(
+        onPressed: () {
+          if (formkey.currentState != null &&
+              formkey.currentState!.validate()) {
+            note.title = titleController.text;
+            note.subTitle = subTitleController.text;
+            note.save();
+            Navigator.pop(context);
+            BlocProvider.of<DisplaynoteCubit>(context).displaynote();
+          } else {
+            Navigator.pop(context);
+            showModelButtonSheet(context);
+          }
+        },
       ),
     ]);
   }
