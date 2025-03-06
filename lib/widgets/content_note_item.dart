@@ -29,16 +29,14 @@ class ContentNoteTips extends StatelessWidget {
               fontSize: FontSizeManager.font20),
         ),
         SizedBox(height: HeightManager.h8),
-        Expanded(
-          child: Text(
-            noteModel.subTitle,
-            maxLines: 4,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                fontFamily: FontFamilyManager.kInterFont,
-                color: Colors.grey,
-                fontSize: FontSizeManager.font16),
-          ),
+        Text(
+          noteModel.subTitle,
+          maxLines: 6,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+              fontFamily: FontFamilyManager.kInterFont,
+              color: Colors.grey,
+              fontSize: FontSizeManager.font16),
         ),
         SizedBox(height: HeightManager.h20),
         Row(

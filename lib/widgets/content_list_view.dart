@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 
 class ContentListView extends StatelessWidget {
@@ -30,12 +33,27 @@ class ContentListView extends StatelessWidget {
               fontSize: FontSizeManager.font20),
         ),
         SizedBox(height: HeightManager.h8),
-        Text(
-          noteModel.date,
-          style: TextStyle(
-              fontFamily: FontFamilyManager.kInterFont,
-              color: Colors.grey,
-              fontSize: FontSizeManager.font10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              noteModel.date,
+              style: TextStyle(
+                  fontFamily: FontFamilyManager.kInterFont,
+                  color: Colors.grey,
+                  fontSize: FontSizeManager.font10),
+            ),
+            IconButton(
+                onPressed: () {
+                  noteModel.delete();
+                  BlocProvider.of<DisplaynoteCubit>(context).displaynote();
+                },
+                icon: Icon(
+                  FontAwesomeIcons.trash,
+                  size: FontSizeManager.font16,
+                  color: Colors.grey,
+                ))
+          ],
         )
       ],
     );
