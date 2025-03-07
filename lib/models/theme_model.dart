@@ -5,6 +5,7 @@ class ModelTheme {
     useMaterial3: false,
     brightness: Brightness.light,
   );
+
   final darkmode = ThemeData(
     useMaterial3: false,
     brightness: Brightness.dark,

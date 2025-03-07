@@ -121,7 +121,7 @@ class _RowStyleSettingState extends State<RowStyleSetting> {
             PopupMenuItem(
                 child: PopupMenuItemWithFeedback(
                     onPressed: () {
-                      BlocProvider.of<ThemeCubit>(context).changedarkTheme();
+                      BlocProvider.of<ThemeCubit>(context).changeTheme();
                       Navigator.pop(context);
                       setState(() {
                         themeStyle = TextSettingsManager.kDark;
@@ -131,7 +131,7 @@ class _RowStyleSettingState extends State<RowStyleSetting> {
             PopupMenuItem(
                 child: PopupMenuItemWithFeedback(
                     onPressed: () {
-                      BlocProvider.of<ThemeCubit>(context).changelightTheme();
+                      BlocProvider.of<ThemeCubit>(context).changeTheme();
                       Navigator.pop(context);
                       setState(() {
                         themeStyle = TextSettingsManager.kLight;
