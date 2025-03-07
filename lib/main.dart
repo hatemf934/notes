@@ -42,7 +42,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotes);
-  await Hive.openBox<bool>('themeBox');
+  await Hive.openBox<bool>(kTheme);
   runApp(const NoteApp());
 }
 

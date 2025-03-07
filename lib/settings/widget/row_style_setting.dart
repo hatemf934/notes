@@ -88,7 +88,7 @@ class _RowStyleSettingState extends State<RowStyleSetting> {
             PopupMenuItem(
                 child: PopupMenuItemWithFeedback(
               onPressed: () {
-                BlocProvider.of<LayoutcubitCubit>(context).changeGridview();
+                BlocProvider.of<LayoutcubitCubit>(context).changeview();
                 Navigator.pop(context);
                 setState(() {
                   layoutStyle = TextSettingsManager.kGridView;
@@ -99,7 +99,7 @@ class _RowStyleSettingState extends State<RowStyleSetting> {
             PopupMenuItem(
                 child: PopupMenuItemWithFeedback(
               onPressed: () {
-                BlocProvider.of<LayoutcubitCubit>(context).changeListview();
+                BlocProvider.of<LayoutcubitCubit>(context).changeview();
                 Navigator.pop(context);
                 setState(() {
                   layoutStyle = TextSettingsManager.kListView;

@@ -14,4 +14,6 @@ class TextManager {
   static String kTitleModelSheet = "Should add title or desc";
   static String kSave = "to save";
   static String kTryAgain = "Something is wrong , please try again";
+  static String kIsGrid = "isGrid";
+  static String kIsDark = "isDark";
 }
