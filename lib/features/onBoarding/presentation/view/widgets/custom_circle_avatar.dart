@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notabli/constant.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
-import 'package:notabli/views/home_screen.dart';
+import 'package:notabli/features/home/presentation/view/home_screen.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({super.key});

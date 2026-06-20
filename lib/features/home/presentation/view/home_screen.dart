@@ -9,10 +9,10 @@ import 'package:notabli/core/utils/text_manager.dart';
 import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
 import 'package:notabli/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/settings/settings_screen.dart';
-import 'package:notabli/widgets/custom_floating_action_button.dart';
-import 'package:notabli/widgets/custom_grid_view.dart';
-import 'package:notabli/widgets/custom_list_view.dart';
-import 'package:notabli/widgets/empty_notes.dart';
+import 'package:notabli/features/home/presentation/view/widgets/custom_floating_action_button.dart';
+import 'package:notabli/features/home/presentation/view/widgets/custom_grid_view.dart';
+import 'package:notabli/features/home/presentation/view/widgets/custom_list_view.dart';
+import 'package:notabli/features/home/presentation/view/widgets/empty_notes.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
