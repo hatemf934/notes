@@ -1,8 +1,8 @@
 class RouteManager {
   RouteManager._();
-  static String kOnbording = "onborading";
-  static String kHomescreen = "homepage";
-  static String kShowscreen = "showscreen";
-  static String kEditNote = "editnote";
-  static String kSettingsScreen = "settingscreen";
+  static const String kOnbording = "onborading";
+  static const String kHomescreen = "homepage";
+  static const String kShowscreen = "showscreen";
+  static const String kEditNote = "editnote";
+  static const String kSettingsScreen = "settingscreen";
 }

@@ -5,18 +5,15 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_demo/constant.dart';
 import 'package:note_demo/core/font_manager.dart';
 import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/helper/on_generate.dart';
 import 'package:note_demo/core/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
-import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
 import 'package:note_demo/models/theme_model.dart';
-import 'package:note_demo/settings/settings_screen.dart';
-import 'package:note_demo/views/home_screen.dart';
 import 'package:note_demo/views/onborading.dart';
-import 'package:note_demo/views/show_note_screen.dart';
 
 void main() async {
   ErrorWidget.builder = (FlutterErrorDetails details) {
@@ -82,13 +79,7 @@ class NoteApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             initialRoute: Onborading.id,
-            routes: {
-              Onborading.id: (context) => const Onborading(),
-              EditNoteScreen.id: (context) => const EditNoteScreen(),
-              HomeScreen.id: (context) => const HomeScreen(),
-              ShowNoteScreen.id: (context) => const ShowNoteScreen(),
-              SettingsScreen.id: (context) => const SettingsScreen(),
-            },
+            onGenerateRoute: onGenerateRoute,
             theme: state == ThemeCubitState.Light
                 ? ModelTheme().lightmode
                 : ModelTheme().darkmode,
