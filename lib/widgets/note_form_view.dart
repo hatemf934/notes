@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
 import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:note_demo/widgets/text_field_custom.dart';
@@ -46,19 +47,19 @@ class _NoteFromViewState extends State<NoteFromView> {
                 TextStyle currentTextStyle;
                 switch (state) {
                   case ThemeTextCubitState.Small:
-                    currentTextStyle = TextStyle(
+                    currentTextStyle = const TextStyle(
                       fontSize: FontSizeManager.font16,
                       fontFamily: FontFamilyManager.kNunitoFont,
                     );
                     break;
                   case ThemeTextCubitState.Medium:
-                    currentTextStyle = TextStyle(
+                    currentTextStyle = const TextStyle(
                       fontSize: FontSizeManager.font20,
                       fontFamily: FontFamilyManager.kNunitoFont,
                     );
                     break;
                   case ThemeTextCubitState.Large:
-                    currentTextStyle = TextStyle(
+                    currentTextStyle = const TextStyle(
                       fontSize: FontSizeManager.font30,
                       fontFamily: FontFamilyManager.kNunitoFont,
                     );

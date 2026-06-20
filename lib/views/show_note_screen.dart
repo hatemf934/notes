@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/height_width_manager.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
 import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:note_demo/widgets/app_bar.dart';
 import 'package:note_demo/widgets/note_form_view.dart';

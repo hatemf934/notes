@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 
@@ -17,28 +18,28 @@ class ContentListView extends StatelessWidget {
       children: [
         Text(
           noteModel.title,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: FontFamilyManager.kOtamaFont,
               color: kPrimaryColor,
               fontSize: FontSizeManager.font30),
         ),
-        SizedBox(height: HeightManager.h10),
+        const SizedBox(height: HeightManager.h10),
         Text(
           maxLines: 6,
           overflow: TextOverflow.ellipsis,
           noteModel.subTitle,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: FontFamilyManager.kInterFont,
               color: Colors.grey,
               fontSize: FontSizeManager.font20),
         ),
-        SizedBox(height: HeightManager.h8),
+        const SizedBox(height: HeightManager.h8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               noteModel.date,
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: FontFamilyManager.kInterFont,
                   color: Colors.grey,
                   fontSize: FontSizeManager.font10),
@@ -48,7 +49,7 @@ class ContentListView extends StatelessWidget {
                   noteModel.delete();
                   BlocProvider.of<DisplaynoteCubit>(context).displaynote();
                 },
-                icon: Icon(
+                icon: const Icon(
                   FontAwesomeIcons.trash,
                   size: FontSizeManager.font16,
                   color: Colors.grey,

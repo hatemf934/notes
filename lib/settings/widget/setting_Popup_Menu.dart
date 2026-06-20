@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/padding_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/raduis_manager.dart';
 import 'package:note_demo/settings/widget/row_item_style.dart';
 
 class SettingPopupMenu extends StatelessWidget {
@@ -28,7 +29,7 @@ class SettingPopupMenu extends StatelessWidget {
           borderRadius: BorderRadius.circular(RadiusManager.rd12),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
               horizontal: PaddingManager.pd8, vertical: PaddingManager.pd16),
           child: RowItemStyle(
             fontsize: fontsize,

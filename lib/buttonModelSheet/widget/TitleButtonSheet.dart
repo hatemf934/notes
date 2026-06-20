@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
 
 class TitleButtonSheet extends StatelessWidget {
   const TitleButtonSheet({super.key});

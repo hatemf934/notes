@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/raduis_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/widgets/content_note_item.dart';
 
@@ -15,7 +16,7 @@ class NoteItem extends StatelessWidget {
         Navigator.pushNamed(context, RouteManager.kEditNote, arguments: note);
       },
       child: Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: PaddingManager.pd12,
           bottom: PaddingManager.pd8,
           left: PaddingManager.pd16,

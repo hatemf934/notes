@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/height_width_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
+import 'package:note_demo/core/utils/width_manager.dart';
 
 class IconControlButtonSheet extends StatelessWidget {
   const IconControlButtonSheet({super.key});
@@ -17,14 +18,14 @@ class IconControlButtonSheet extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.check_circle_outline_rounded,
                 size: FontSizeManager.font40,
               )),
-          SizedBox(
+          const SizedBox(
             height: HeightManager.h20,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: WidthManager.w8),

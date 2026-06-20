@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/height_width_manager.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/route_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/settings/settings_screen.dart';
@@ -36,13 +37,13 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: HeightManager.h20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     TextManager.kNotesHome,
                     style: TextStyle(
                         fontFamily: FontFamilyManager.kOtamaFont,
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         Navigator.pushNamed(context, SettingsScreen.id);
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.settings_outlined,
                         size: FontSizeManager.font30,
                       ))

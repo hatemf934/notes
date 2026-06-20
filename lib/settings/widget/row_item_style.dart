@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/font_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
 
 class RowItemStyle extends StatelessWidget {
   const RowItemStyle({
@@ -16,13 +17,13 @@ class RowItemStyle extends StatelessWidget {
       children: [
         Text(
           fontsize,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: FontSizeManager.font20,
           ),
         ),
         const Spacer(),
         Text(medium,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: FontSizeManager.font20,
                 fontFamily: FontFamilyManager.kNunitoFont)),
         Icon(Icons.keyboard_double_arrow_down,

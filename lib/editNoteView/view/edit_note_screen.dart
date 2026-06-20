@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
 import 'package:note_demo/editNoteView/widgets/edit_custom_bar.dart';
 import 'package:note_demo/editNoteView/widgets/edit_note_form_view.dart';
 import 'package:note_demo/models/note_model.dart';

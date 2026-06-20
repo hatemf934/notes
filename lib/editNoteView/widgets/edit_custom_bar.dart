@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_demo/buttonModelSheet/helper/show_model_button.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
 import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
 import 'package:note_demo/models/note_model.dart';
 import 'package:note_demo/widgets/custom_icon_button.dart';
@@ -22,7 +23,7 @@ class EditCustomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.arrow_back_ios_new_outlined,
           size: FontSizeManager.font30,
         ),
@@ -30,7 +31,7 @@ class EditCustomBar extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
-      Text(
+      const Text(
         TextManager.kCancel,
         style: TextStyle(
           fontFamily: FontFamilyManager.kOtamaFont,

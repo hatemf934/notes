@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/font_manager.dart';
-import 'package:note_demo/core/height_width_manager.dart';
-import 'package:note_demo/core/padding_manager.dart';
-import 'package:note_demo/core/route_manager.dart';
-import 'package:note_demo/core/text_manager.dart';
+import 'package:note_demo/core/utils/font_family_manager.dart';
+import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
+import 'package:note_demo/core/utils/padding_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
+import 'package:note_demo/core/utils/text_manager.dart';
 import 'package:note_demo/widgets/custom_circle_avatar.dart';
 
 class Onborading extends StatelessWidget {
@@ -15,25 +16,25 @@ class Onborading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(PaddingManager.pd16),
+        padding: const EdgeInsets.all(PaddingManager.pd16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(kImage),
-            SizedBox(
+            const SizedBox(
               height: HeightManager.h30,
             ),
-            Text(
+            const Text(
               TextManager.kTitleBording,
               style: TextStyle(
                 fontFamily: FontFamilyManager.kOtamaFont,
                 fontSize: FontSizeManager.font48,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: HeightManager.h30,
             ),
-            Text(
+            const Text(
               textAlign: TextAlign.center,
               TextManager.kSubTitleBording,
               style: TextStyle(
@@ -41,7 +42,7 @@ class Onborading extends StatelessWidget {
                   fontSize: FontSizeManager.font16,
                   fontWeight: FontWeight.w400),
             ),
-            SizedBox(
+            const SizedBox(
               height: HeightManager.h40,
             ),
             const CustomCircleAvatar(),

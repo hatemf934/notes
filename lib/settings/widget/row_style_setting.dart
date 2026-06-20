@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/height_width_manager.dart';
+import 'package:note_demo/core/utils/height_manager.dart';
 import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
 import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';

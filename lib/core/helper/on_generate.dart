@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/route_manager.dart';
+import 'package:note_demo/core/utils/route_manager.dart';
 import 'package:note_demo/editNoteView/view/edit_note_screen.dart';
 import 'package:note_demo/settings/settings_screen.dart';
 import 'package:note_demo/views/home_screen.dart';
