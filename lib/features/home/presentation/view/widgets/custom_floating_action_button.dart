@@ -5,7 +5,7 @@ import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 import 'package:notabli/core/utils/width_manager.dart';
-import 'package:notabli/views/show_note_screen.dart';
+import 'package:notabli/features/home/presentation/view/show_note_screen.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});

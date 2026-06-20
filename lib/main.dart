@@ -7,12 +7,12 @@ import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/helper/on_generate.dart';
 import 'package:notabli/core/utils/text_manager.dart';
-import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
-import 'package:notabli/cubits/layout_cubit/layoutcubit_cubit.dart';
-import 'package:notabli/cubits/themecubit/themecubit_cubit.dart';
-import 'package:notabli/cubits/themetextcubit/themetext_cubit.dart';
-import 'package:notabli/models/note_model.dart';
-import 'package:notabli/models/theme_model.dart';
+import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
+import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/core/cubits/themecubit/themecubit_cubit.dart';
+import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
+import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/core/models/theme_model.dart';
 import 'package:notabli/features/onBoarding/presentation/view/onborading.dart';
 
 void main() async {

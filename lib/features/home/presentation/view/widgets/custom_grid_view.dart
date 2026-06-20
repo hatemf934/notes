@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
-import 'package:notabli/models/note_model.dart';
-import 'package:notabli/widgets/note_item.dart';
+import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
+import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/home/presentation/view/widgets/note_item.dart';
 
 class CustomGridView extends StatelessWidget {
   const CustomGridView({super.key});
