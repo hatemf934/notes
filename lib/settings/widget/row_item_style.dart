@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/font_family_manager.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/font_family_manager.dart';
+import 'package:notabli/core/utils/font_manager.dart';
 
 class RowItemStyle extends StatelessWidget {
   const RowItemStyle({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/raduis_manager.dart';
-import 'package:note_demo/core/utils/width_manager.dart';
-import 'package:note_demo/views/show_note_screen.dart';
+import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/raduis_manager.dart';
+import 'package:notabli/core/utils/width_manager.dart';
+import 'package:notabli/views/show_note_screen.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});

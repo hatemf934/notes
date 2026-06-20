@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/widgets/app_bar_icons.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/widgets/app_bar_icons.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/buttonModelSheet/widget/IconControlButtonSheet.dart';
-import 'package:note_demo/buttonModelSheet/widget/TitleButtonSheet.dart';
-import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
+import 'package:notabli/buttonModelSheet/widget/IconControlButtonSheet.dart';
+import 'package:notabli/buttonModelSheet/widget/TitleButtonSheet.dart';
+import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/height_manager.dart';
 
 class ContentShowModel extends StatelessWidget {
   const ContentShowModel({super.key});

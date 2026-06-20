@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/route_manager.dart';
-import 'package:note_demo/editNoteView/widgets/edit_custom_bar.dart';
-import 'package:note_demo/editNoteView/widgets/edit_note_form_view.dart';
-import 'package:note_demo/models/note_model.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/route_manager.dart';
+import 'package:notabli/editNoteView/widgets/edit_custom_bar.dart';
+import 'package:notabli/editNoteView/widgets/edit_note_form_view.dart';
+import 'package:notabli/models/note_model.dart';
 
 class EditNoteScreen extends StatefulWidget {
   const EditNoteScreen({super.key});

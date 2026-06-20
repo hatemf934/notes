@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/font_family_manager.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/route_manager.dart';
-import 'package:note_demo/core/utils/text_manager.dart';
-import 'package:note_demo/settings/core/text_settings_manager.dart';
-import 'package:note_demo/settings/widget/row_style_setting.dart';
+import 'package:notabli/core/utils/font_family_manager.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/route_manager.dart';
+import 'package:notabli/core/utils/text_manager.dart';
+import 'package:notabli/settings/core/text_settings_manager.dart';
+import 'package:notabli/settings/widget/row_style_setting.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

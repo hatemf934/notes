@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/utils/font_family_manager.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
-import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
-import 'package:note_demo/models/note_model.dart';
+import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/font_family_manager.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
+import 'package:notabli/models/note_model.dart';
 
 class ContentNoteTips extends StatelessWidget {
   const ContentNoteTips({

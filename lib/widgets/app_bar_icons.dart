@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:note_demo/buttonModelSheet/helper/show_model_button.dart';
-import 'package:note_demo/constant.dart';
-import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
-import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
-import 'package:note_demo/models/note_model.dart';
-import 'package:note_demo/widgets/custom_icon_button.dart';
+import 'package:notabli/buttonModelSheet/helper/show_model_button.dart';
+import 'package:notabli/constant.dart';
+import 'package:notabli/cubits/add_note_cubit/add_notes_cubit.dart';
+import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
+import 'package:notabli/models/note_model.dart';
+import 'package:notabli/widgets/custom_icon_button.dart';
 
 class AppBarIcons extends StatelessWidget {
   const AppBarIcons({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/buttonModelSheet/widget/content_button_sheet.dart';
-import 'package:note_demo/core/utils/raduis_manager.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/buttonModelSheet/widget/content_button_sheet.dart';
+import 'package:notabli/core/utils/raduis_manager.dart';
 
 void showModelButtonSheet(BuildContext context) {
   showModalBottomSheet(

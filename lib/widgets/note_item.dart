@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/raduis_manager.dart';
-import 'package:note_demo/core/utils/route_manager.dart';
-import 'package:note_demo/models/note_model.dart';
-import 'package:note_demo/widgets/content_note_item.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/raduis_manager.dart';
+import 'package:notabli/core/utils/route_manager.dart';
+import 'package:notabli/models/note_model.dart';
+import 'package:notabli/widgets/content_note_item.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});

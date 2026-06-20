@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:note_demo/helper/hive_helper.dart';
+import 'package:notabli/helper/hive_helper.dart';
 
 part 'themecubit_state.dart';
 

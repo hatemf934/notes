@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/utils/font_family_manager.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/core/utils/text_manager.dart';
-import 'package:note_demo/cubits/add_note_cubit/add_notes_cubit.dart';
-import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';
-import 'package:note_demo/widgets/text_field_custom.dart';
+import 'package:notabli/core/utils/font_family_manager.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/text_manager.dart';
+import 'package:notabli/cubits/add_note_cubit/add_notes_cubit.dart';
+import 'package:notabli/cubits/themetextcubit/themetext_cubit.dart';
+import 'package:notabli/widgets/text_field_custom.dart';
 
 class NoteFromView extends StatefulWidget {
   const NoteFromView({

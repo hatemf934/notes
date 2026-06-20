@@ -1,7 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
-import 'package:note_demo/constant.dart';
-import 'package:note_demo/core/utils/text_manager.dart';
-import 'package:note_demo/models/note_model.dart';
+import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/text_manager.dart';
+import 'package:notabli/models/note_model.dart';
 
 class HiveHelper {
   Future<void> addNotes(NoteModel note) async {

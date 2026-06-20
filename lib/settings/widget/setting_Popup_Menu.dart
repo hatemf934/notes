@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/raduis_manager.dart';
-import 'package:note_demo/settings/widget/row_item_style.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/raduis_manager.dart';
+import 'package:notabli/settings/widget/row_item_style.dart';
 
 class SettingPopupMenu extends StatelessWidget {
   const SettingPopupMenu(

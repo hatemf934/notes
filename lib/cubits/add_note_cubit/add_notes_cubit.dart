@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:note_demo/helper/hive_helper.dart';
-import 'package:note_demo/models/note_model.dart';
+import 'package:notabli/helper/hive_helper.dart';
+import 'package:notabli/models/note_model.dart';
 
 part 'add_notes_state.dart';
 

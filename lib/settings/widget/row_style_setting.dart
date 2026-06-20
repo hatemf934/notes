@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
-import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
-import 'package:note_demo/cubits/themecubit/themecubit_cubit.dart';
-import 'package:note_demo/cubits/themetextcubit/themetext_cubit.dart';
-import 'package:note_demo/settings/core/text_settings_manager.dart';
-import 'package:note_demo/settings/widget/Popup_Menu_Item_With_Feedback.dart';
-import 'package:note_demo/settings/widget/setting_Popup_Menu.dart';
+import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/cubits/themecubit/themecubit_cubit.dart';
+import 'package:notabli/cubits/themetextcubit/themetext_cubit.dart';
+import 'package:notabli/settings/core/text_settings_manager.dart';
+import 'package:notabli/settings/widget/Popup_Menu_Item_With_Feedback.dart';
+import 'package:notabli/settings/widget/setting_Popup_Menu.dart';
 
 class RowStyleSetting extends StatefulWidget {
   const RowStyleSetting({super.key});

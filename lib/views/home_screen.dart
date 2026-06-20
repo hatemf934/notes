@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_demo/core/utils/font_family_manager.dart';
-import 'package:note_demo/core/utils/font_manager.dart';
-import 'package:note_demo/core/utils/height_manager.dart';
-import 'package:note_demo/core/utils/padding_manager.dart';
-import 'package:note_demo/core/utils/route_manager.dart';
-import 'package:note_demo/core/utils/text_manager.dart';
-import 'package:note_demo/cubits/displayNote/displaynote_cubit.dart';
-import 'package:note_demo/cubits/layout_cubit/layoutcubit_cubit.dart';
-import 'package:note_demo/settings/settings_screen.dart';
-import 'package:note_demo/widgets/custom_floating_action_button.dart';
-import 'package:note_demo/widgets/custom_grid_view.dart';
-import 'package:note_demo/widgets/custom_list_view.dart';
-import 'package:note_demo/widgets/empty_notes.dart';
+import 'package:notabli/core/utils/font_family_manager.dart';
+import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/core/utils/padding_manager.dart';
+import 'package:notabli/core/utils/route_manager.dart';
+import 'package:notabli/core/utils/text_manager.dart';
+import 'package:notabli/cubits/displayNote/displaynote_cubit.dart';
+import 'package:notabli/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/settings/settings_screen.dart';
+import 'package:notabli/widgets/custom_floating_action_button.dart';
+import 'package:notabli/widgets/custom_grid_view.dart';
+import 'package:notabli/widgets/custom_list_view.dart';
+import 'package:notabli/widgets/empty_notes.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
