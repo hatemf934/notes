@@ -13,11 +13,11 @@ import 'package:notabli/cubits/themecubit/themecubit_cubit.dart';
 import 'package:notabli/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/models/note_model.dart';
 import 'package:notabli/models/theme_model.dart';
-import 'package:notabli/views/onborading.dart';
+import 'package:notabli/features/onBoarding/presentation/view/onborading.dart';
 
 void main() async {
   ErrorWidget.builder = (FlutterErrorDetails details) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
         child: Column(

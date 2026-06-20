@@ -6,7 +6,7 @@ import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
 import 'package:notabli/core/utils/text_manager.dart';
-import 'package:notabli/widgets/custom_circle_avatar.dart';
+import 'package:notabli/features/onBoarding/presentation/view/widgets/custom_circle_avatar.dart';
 
 class Onborading extends StatelessWidget {
   const Onborading({super.key});
