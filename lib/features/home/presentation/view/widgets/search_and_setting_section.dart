@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
@@ -6,17 +9,16 @@ import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 import 'package:notabli/core/utils/text_manager.dart';
 import 'package:notabli/core/utils/width_manager.dart';
-import 'package:notabli/features/settings_view/presentation/view/settings_screen.dart';
 
-class SearchAndSettingSection extends StatelessWidget {
-  const SearchAndSettingSection({super.key});
+class SearchAndSettingLayoutSection extends StatelessWidget {
+  const SearchAndSettingLayoutSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         SizedBox(
-          height: HeightManager.h50,
+          height: HeightManager.h45,
           width: MediaQuery.of(context).size.width * .75,
           child: TextField(
             decoration: InputDecoration(
@@ -38,15 +40,19 @@ class SearchAndSettingSection extends StatelessWidget {
           ),
         ),
         const SizedBox(width: WidthManager.w16),
-        IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, SettingsScreen.id);
-            },
-            icon: const Icon(
+        IconButton(onPressed: () {
+          BlocProvider.of<LayoutcubitCubit>(context).changeview();
+        }, icon: BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
+          builder: (context, state) {
+            return Icon(
               color: ColorManager.colorgrey,
-              Icons.settings_outlined,
+              state == LayoutcubitState.ListView
+                  ? FontAwesomeIcons.listUl
+                  : Icons.grid_view_rounded,
               size: FontSizeManager.font30,
-            ))
+            );
+          },
+        ))
       ],
     );
   }

@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: HeightManager.h50),
-              const SearchAndSettingSection(),
+              const SearchAndSettingLayoutSection(),
               BlocBuilder<DisplaynoteCubit, DisplaynoteState>(
                 builder: (context, state) {
                   if (state is DisplaynotesEmpty) {

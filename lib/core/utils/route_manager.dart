@@ -4,5 +4,4 @@ class RouteManager {
   static const String kHomescreen = "homepage";
   static const String kShowscreen = "showscreen";
   static const String kEditNote = "editnote";
-  static const String kSettingsScreen = "settingscreen";
 }

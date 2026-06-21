@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notabli/core/utils/route_manager.dart';
 import 'package:notabli/features/adding_note/presentation/view/edit_note_screen.dart';
-import 'package:notabli/features/settings_view/presentation/view/settings_screen.dart';
 import 'package:notabli/features/home/presentation/view/home_screen.dart';
 import 'package:notabli/features/onBoarding/presentation/view/onborading.dart';
 import 'package:notabli/features/home/presentation/view/show_note_screen.dart';
@@ -17,10 +16,6 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     case RouteManager.kEditNote:
       return MaterialPageRoute(
         builder: (context) => const EditNoteScreen(),
-      );
-    case RouteManager.kSettingsScreen:
-      return MaterialPageRoute(
-        builder: (context) => const SettingsScreen(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
