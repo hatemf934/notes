@@ -7,4 +7,5 @@ class ColorManager {
   static const Color black87 = Colors.black87;
   static const Color colortransparent = Colors.transparent;
   static const Color colorgrey = Colors.grey;
+  static const Color colorGreen = Colors.green;
 }

@@ -29,8 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xff111111),
         body: Padding(
-          padding: EdgeInsets.all(PaddingManager.pd16),
+          padding: const EdgeInsets.all(PaddingManager.pd16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

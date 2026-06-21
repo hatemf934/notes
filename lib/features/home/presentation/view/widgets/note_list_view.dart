@@ -15,15 +15,11 @@ class NoteListView extends StatelessWidget {
         Navigator.pushNamed(context, RouteManager.kEditNote, arguments: note);
       },
       child: Container(
-          padding: const EdgeInsets.only(
-            top: PaddingManager.pd12,
-            bottom: PaddingManager.pd12,
-            left: PaddingManager.pd16,
-            right: PaddingManager.pd16,
-          ),
+          padding: const EdgeInsets.symmetric(
+              horizontal: PaddingManager.pd16, vertical: PaddingManager.pd12),
           decoration: BoxDecoration(
-            color: Color(note.color),
-            borderRadius: BorderRadius.circular(RadiusManager.rd16),
+            color: const Color(0xff1f1f1f),
+            borderRadius: BorderRadius.circular(RadiusManager.rd12),
           ),
           child: ContentListView(
             noteModel: note,

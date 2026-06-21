@@ -28,7 +28,7 @@ class CustomGetStartingButton extends StatelessWidget {
             backgroundColor: ColorManager.colortransparent),
         child: const Text(
           TextManager.kGetStrart,
-          style: Styles.styleInterFont28,
+          style: Styles.styleInterFont25,
         ));
   }
 }
