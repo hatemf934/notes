@@ -43,6 +43,7 @@ class SearchAndSettingSection extends StatelessWidget {
               Navigator.pushNamed(context, SettingsScreen.id);
             },
             icon: const Icon(
+              color: ColorManager.colorgrey,
               Icons.settings_outlined,
               size: FontSizeManager.font30,
             ))

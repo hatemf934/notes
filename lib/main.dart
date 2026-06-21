@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/helper/on_generate.dart';
@@ -12,7 +12,6 @@ import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/core/cubits/themecubit/themecubit_cubit.dart';
 import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/core/models/note_model.dart';
-import 'package:notabli/core/models/theme_model.dart';
 import 'package:notabli/features/onBoarding/presentation/view/onborading.dart';
 
 void main() async {
@@ -65,25 +64,13 @@ class NoteApp extends StatelessWidget {
       ],
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(
         builder: (context, state) {
-          SystemChrome.setSystemUIOverlayStyle(
-            SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-              statusBarBrightness: state == ThemeCubitState.Light
-                  ? Brightness.dark
-                  : Brightness.light,
-              statusBarIconBrightness: state == ThemeCubitState.Light
-                  ? Brightness.dark
-                  : Brightness.light,
-            ),
-          );
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            initialRoute: Onborading.id,
-            onGenerateRoute: onGenerateRoute,
-            theme: state == ThemeCubitState.Light
-                ? ModelTheme().lightmode
-                : ModelTheme().darkmode,
-          );
+              debugShowCheckedModeBanner: false,
+              initialRoute: Onborading.id,
+              onGenerateRoute: onGenerateRoute,
+              theme: ThemeData(
+                  scaffoldBackgroundColor:
+                      ColorManager.scaffoldBackGroundColor));
         },
       ),
     );

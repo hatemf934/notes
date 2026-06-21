@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
@@ -18,7 +19,7 @@ class NoteListView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
               horizontal: PaddingManager.pd16, vertical: PaddingManager.pd12),
           decoration: BoxDecoration(
-            color: const Color(0xff1f1f1f),
+            color: ColorManager.primaryColor,
             borderRadius: BorderRadius.circular(RadiusManager.rd12),
           ),
           child: ContentListView(

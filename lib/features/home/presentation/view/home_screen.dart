@@ -29,15 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff111111),
         body: Padding(
           padding: const EdgeInsets.all(PaddingManager.pd16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: HeightManager.h30,
-              ),
+              const SizedBox(height: HeightManager.h50),
               const SearchAndSettingSection(),
               BlocBuilder<DisplaynoteCubit, DisplaynoteState>(
                 builder: (context, state) {

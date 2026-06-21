@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
@@ -17,20 +17,12 @@ class CustomFloatingActionButton extends StatelessWidget {
           right: PaddingManager.pd16, bottom: PaddingManager.pd24),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(RadiusManager.rd48),
-            boxShadow: [
-              BoxShadow(
-                color: kSecondaryColor.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: const Offset(0, 2),
-              )
-            ]),
+          borderRadius: BorderRadius.circular(RadiusManager.rd48),
+        ),
         height: HeightManager.h70,
         width: WidthManager.w70,
         child: FloatingActionButton(
-          splashColor: kSecondaryColor,
-          backgroundColor: kSecondaryColor,
+          backgroundColor: ColorManager.greyColor100,
           onPressed: () {
             Navigator.pushNamed(context, ShowNoteScreen.id).then((_) {
               // إخفاء لوحة المفاتيح بعد الانتقال
@@ -39,12 +31,11 @@ class CustomFloatingActionButton extends StatelessWidget {
             ;
           },
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-                RadiusManager.rd48), // Adjust the radius as needed
+            borderRadius: BorderRadius.circular(RadiusManager.rd48),
           ),
           child: const Icon(
             Icons.add,
-            color: kPrimaryColor,
+            color: ColorManager.colorgrey,
             size: FontSizeManager.font48,
           ),
         ),
