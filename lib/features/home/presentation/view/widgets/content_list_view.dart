@@ -15,7 +15,9 @@ class ContentListView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ButtonsContentNote(noteModel: noteModel),
-        Text(noteModel.title, style: Styles.styleInterFont30),
+        Text(noteModel.title,
+            style: Styles.styleInterFontgrey100
+                .copyWith(fontSize: FontSizeManager.font30)),
         const SizedBox(height: HeightManager.h10),
         Text(
             maxLines: 6,
@@ -24,7 +26,9 @@ class ContentListView extends StatelessWidget {
             style: Styles.styleInterFontgrey
                 .copyWith(fontSize: FontSizeManager.font20)),
         const SizedBox(height: HeightManager.h10),
-        const CustomTimeAddingNote(),
+        const CustomTimeAddingNote(
+          textSize: FontSizeManager.font13,
+        ),
       ],
     );
   }

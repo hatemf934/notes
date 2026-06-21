@@ -15,9 +15,8 @@ class Styles {
     fontFamily: FontFamilyManager.kInterFont,
     color: Colors.grey,
   );
-  static TextStyle styleInterFont30 = TextStyle(
+  static TextStyle styleInterFontgrey100 = TextStyle(
     fontFamily: FontFamilyManager.kInterFont,
     color: ColorManager.greyColor100,
-    fontSize: FontSizeManager.font30,
   );
 }

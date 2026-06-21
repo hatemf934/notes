@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
@@ -16,14 +17,12 @@ class NoteItem extends StatelessWidget {
         Navigator.pushNamed(context, RouteManager.kEditNote, arguments: note);
       },
       child: Container(
-        padding: const EdgeInsets.only(
-          top: PaddingManager.pd12,
-          bottom: PaddingManager.pd8,
-          left: PaddingManager.pd16,
-          right: PaddingManager.pd16,
+        padding: const EdgeInsets.symmetric(
+          horizontal: PaddingManager.pd16,
+          vertical: PaddingManager.pd12,
         ),
         decoration: BoxDecoration(
-          color: Color(note.color),
+          color: ColorManager.primaryColor,
           borderRadius: BorderRadius.circular(RadiusManager.rd16),
         ),
         child: ContentNoteTips(

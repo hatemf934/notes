@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notabli/constant.dart';
-import 'package:notabli/core/utils/font_family_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
-import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
 import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/core/utils/styles.dart';
+import 'package:notabli/features/home/presentation/view/widgets/custom_row_icons_button.dart';
+import 'package:notabli/features/home/presentation/view/widgets/row_title_note_item.dart';
 
 class ContentNoteTips extends StatelessWidget {
   const ContentNoteTips({
@@ -20,48 +18,22 @@ class ContentNoteTips extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        RowTitleNoteItem(noteModel: noteModel),
+        const SizedBox(height: HeightManager.h10),
         Text(
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          noteModel.title,
-          style: const TextStyle(
-              fontFamily: FontFamilyManager.kOtamaFont,
-              color: kPrimaryColor,
-              fontSize: FontSizeManager.font20),
-        ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            noteModel.title,
+            style: Styles.styleInterFontgrey100.copyWith(
+                fontSize: FontSizeManager.font16, fontWeight: FontWeight.bold)),
         const SizedBox(height: HeightManager.h8),
-        Text(
-          noteModel.subTitle,
-          maxLines: 6,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-              fontFamily: FontFamilyManager.kInterFont,
-              color: Colors.grey,
-              fontSize: FontSizeManager.font16),
-        ),
+        Text(noteModel.subTitle,
+            maxLines: 6,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.styleInterFontgrey
+                .copyWith(fontSize: FontSizeManager.font13)),
         const SizedBox(height: HeightManager.h20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              noteModel.date,
-              style: const TextStyle(
-                  fontFamily: FontFamilyManager.kInterFont,
-                  color: Colors.grey,
-                  fontSize: FontSizeManager.font12),
-            ),
-            IconButton(
-                onPressed: () {
-                  noteModel.delete();
-                  BlocProvider.of<DisplaynoteCubit>(context).displaynote();
-                },
-                icon: const Icon(
-                  FontAwesomeIcons.trash,
-                  size: FontSizeManager.font16,
-                  color: Colors.grey,
-                ))
-          ],
-        ),
+        CustomRowIconsButton(noteModel: noteModel),
       ],
     );
   }
