@@ -1,9 +1,10 @@
 class TextManager {
   TextManager._();
-  static const String kTitleBording = "All thoughts.\n  One place.";
+  static const String kTitleBording = "all of your notes,\nin one place";
   static const String kSubTitleBording =
-      "Dive right in and clear that mind of yours by writing your thoughts down";
+      "jot down on whenever and wherever\nyou want, let the rest up to us";
   static const String kNotesHome = "Notes";
+  static const String kGetStrart = 'Get Started';
   static const String kTitle = "Title";
   static const String kSubTitle = "Type something...";
   static const String kCancel = "Cancel";

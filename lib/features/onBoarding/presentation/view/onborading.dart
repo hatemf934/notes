@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/constant.dart';
-import 'package:notabli/core/utils/font_family_manager.dart';
-import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/assets_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
-import 'package:notabli/core/utils/text_manager.dart';
-import 'package:notabli/features/onBoarding/presentation/view/widgets/custom_circle_avatar.dart';
+import 'package:notabli/features/onBoarding/presentation/view/widgets/custom_get_starting_button.dart';
+import 'package:notabli/features/onBoarding/presentation/view/widgets/text_onborading_section.dart';
 
 class Onborading extends StatelessWidget {
   const Onborading({super.key});
@@ -19,33 +17,13 @@ class Onborading extends StatelessWidget {
         padding: const EdgeInsets.all(PaddingManager.pd16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(kImage),
-            const SizedBox(
-              height: HeightManager.h30,
-            ),
-            const Text(
-              TextManager.kTitleBording,
-              style: TextStyle(
-                fontFamily: FontFamilyManager.kOtamaFont,
-                fontSize: FontSizeManager.font48,
-              ),
-            ),
-            const SizedBox(
-              height: HeightManager.h30,
-            ),
-            const Text(
-              textAlign: TextAlign.center,
-              TextManager.kSubTitleBording,
-              style: TextStyle(
-                  fontFamily: FontFamilyManager.kRobotoFont,
-                  fontSize: FontSizeManager.font16,
-                  fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: HeightManager.h40,
-            ),
-            const CustomCircleAvatar(),
+            Image.asset(AssetsManager.logoApp),
+            const SizedBox(height: HeightManager.h20),
+            const TextOnBoardingSection(),
+            const SizedBox(height: HeightManager.h30),
+            const CustomGetStartingButton()
           ],
         ),
       ),
