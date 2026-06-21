@@ -4,6 +4,7 @@ class TextManager {
   static const String kSubTitleBording =
       "jot down on whenever and wherever\nyou want, let the rest up to us";
   static const String kNotesHome = "Notes";
+  static const String kSearch = 'Search for notes';
   static const String kGetStrart = 'Get Started';
   static const String kTitle = "Title";
   static const String kSubTitle = "Type something...";

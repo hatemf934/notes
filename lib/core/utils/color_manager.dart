@@ -6,4 +6,5 @@ class ColorManager {
   static const Color meduimGrey = Color(0xFF888888);
   static const Color black87 = Colors.black87;
   static const Color colortransparent = Colors.transparent;
+  static const Color colorgrey = Colors.grey;
 }

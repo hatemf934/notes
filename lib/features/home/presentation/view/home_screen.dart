@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notabli/core/utils/font_family_manager.dart';
-import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
-import 'package:notabli/core/utils/text_manager.dart';
 import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
 import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
-import 'package:notabli/features/settings_view/presentation/view/settings_screen.dart';
+import 'package:notabli/features/home/presentation/view/widgets/search_and_setting_section.dart';
 import 'package:notabli/features/home/presentation/view/widgets/custom_floating_action_button.dart';
 import 'package:notabli/features/home/presentation/view/widgets/custom_grid_view.dart';
 import 'package:notabli/features/home/presentation/view/widgets/custom_list_view.dart';
@@ -38,28 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: HeightManager.h20,
+                height: HeightManager.h30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    TextManager.kNotesHome,
-                    style: TextStyle(
-                        fontFamily: FontFamilyManager.kOtamaFont,
-                        fontSize: FontSizeManager.font30,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, SettingsScreen.id);
-                      },
-                      icon: const Icon(
-                        Icons.settings_outlined,
-                        size: FontSizeManager.font30,
-                      ))
-                ],
-              ),
+              const SearchAndSettingSection(),
               BlocBuilder<DisplaynoteCubit, DisplaynoteState>(
                 builder: (context, state) {
                   if (state is DisplaynotesEmpty) {
