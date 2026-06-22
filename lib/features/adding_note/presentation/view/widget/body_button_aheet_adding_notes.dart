@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notabli/constant.dart';
+import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/width_manager.dart';
@@ -34,9 +36,24 @@ class _BodyOfButtonSheetAddingNotesState
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              headingButton(label: 'H1', onTap: () {}),
-              headingButton(label: 'H2', onTap: () {}),
-              headingButton(label: 'H3', onTap: () {}),
+              headingButton(
+                  label: 'H1',
+                  onTap: () {
+                    BlocProvider.of<ThemetextCubit>(context).changeSmallText();
+                    Navigator.pop(context);
+                  }),
+              headingButton(
+                  label: 'H2',
+                  onTap: () {
+                    BlocProvider.of<ThemetextCubit>(context).changeMediumText();
+                    Navigator.pop(context);
+                  }),
+              headingButton(
+                  label: 'H3',
+                  onTap: () {
+                    BlocProvider.of<ThemetextCubit>(context).changeLargeText();
+                    Navigator.pop(context);
+                  }),
             ],
           ),
           const SizedBox(height: HeightManager.h10),

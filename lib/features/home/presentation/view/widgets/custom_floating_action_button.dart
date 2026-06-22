@@ -6,7 +6,7 @@ import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 import 'package:notabli/core/utils/width_manager.dart';
-import 'package:notabli/features/home/presentation/view/show_note_screen.dart';
+import 'package:notabli/features/adding_note/presentation/view/note_view.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -25,7 +25,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         child: FloatingActionButton(
           backgroundColor: ColorManager.greyColor100,
           onPressed: () {
-            Navigator.pushNamed(context, ShowNoteScreen.id);
+            Navigator.pushNamed(context, NoteView.id);
             showButtomAddingNotes(context);
           },
           shape: RoundedRectangleBorder(

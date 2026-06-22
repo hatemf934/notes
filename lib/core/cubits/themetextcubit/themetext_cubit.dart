@@ -3,26 +3,26 @@ import 'package:bloc/bloc.dart';
 part 'themetext_state.dart';
 
 class ThemetextCubit extends Cubit<ThemeTextCubitState> {
-  ThemetextCubit() : super(ThemeTextCubitState.Medium);
+  ThemetextCubit() : super(ThemeTextCubitState.medium);
 
   changeSmallText() {
-    if (state == ThemeTextCubitState.Medium ||
-        state == ThemeTextCubitState.Large) {
-      emit(ThemeTextCubitState.Small);
+    if (state == ThemeTextCubitState.medium ||
+        state == ThemeTextCubitState.large) {
+      emit(ThemeTextCubitState.small);
     }
   }
 
   changeMediumText() {
-    if (state == ThemeTextCubitState.Small ||
-        state == ThemeTextCubitState.Large) {
-      emit(ThemeTextCubitState.Medium);
+    if (state == ThemeTextCubitState.small ||
+        state == ThemeTextCubitState.large) {
+      emit(ThemeTextCubitState.medium);
     }
   }
 
   changeLargeText() {
-    if (state == ThemeTextCubitState.Small ||
-        state == ThemeTextCubitState.Medium) {
-      emit(ThemeTextCubitState.Large);
+    if (state == ThemeTextCubitState.small ||
+        state == ThemeTextCubitState.medium) {
+      emit(ThemeTextCubitState.large);
     }
   }
 }

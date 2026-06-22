@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notabli/core/utils/font_family_manager.dart';
-import 'package:notabli/core/utils/font_manager.dart';
-import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/core/models/note_model.dart';
-
-import 'package:notabli/core/widget/text_field_custom.dart';
+import 'package:notabli/features/adding_note/presentation/view/widget/custom_bloc_builder_note_form_view.dart';
 
 class EditNoteFormView extends StatelessWidget {
   const EditNoteFormView({
@@ -21,70 +16,11 @@ class EditNoteFormView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemetextCubit, ThemeTextCubitState>(
-      builder: (context, state) {
-        TextStyle currentTextStyle;
-        switch (state) {
-          case ThemeTextCubitState.Small:
-            currentTextStyle = const TextStyle(
-              fontSize: FontSizeManager.font16,
-              fontFamily: FontFamilyManager.kNunitoFont,
-            );
-            break;
-          case ThemeTextCubitState.Medium:
-            currentTextStyle = const TextStyle(
-              fontSize: FontSizeManager.font20,
-              fontFamily: FontFamilyManager.kNunitoFont,
-            );
-            break;
-          case ThemeTextCubitState.Large:
-            currentTextStyle = const TextStyle(
-              fontSize: FontSizeManager.font30,
-              fontFamily: FontFamilyManager.kNunitoFont,
-            );
-            break;
-          default:
-            currentTextStyle = const TextStyle();
-        }
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              TextFieldCustom(
-                autofocus: false,
-                controller: titleController,
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return " ";
-                  } else {
-                    return null;
-                  }
-                },
-                text: note.title,
-                style: const TextStyle(
-                    fontSize: FontSizeManager.font30,
-                    fontFamily: FontFamilyManager.kNunitoFont),
-                maxlines: 1,
-                size: FontSizeManager.font35,
-              ),
-              TextFieldCustom(
-                autofocus: false,
-                controller: subTitleController,
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return " ";
-                  } else {
-                    return null;
-                  }
-                },
-                text: note.subTitle,
-                style: currentTextStyle,
-                maxlines: null,
-                size: FontSizeManager.font23,
-              )
-            ],
-          ),
-        );
-      },
-    );
+    return CustomBlocBuilderNoteFormView(
+        titleController: titleController,
+        subTitleController: subTitleController,
+        title: note.title,
+        subtitle: note.subTitle,
+        autoFocus: true);
   }
 }

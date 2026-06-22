@@ -19,4 +19,8 @@ class Styles {
     fontFamily: FontFamilyManager.kInterFont,
     color: ColorManager.greyColor100,
   );
+  static TextStyle styleNunitoFont = TextStyle(
+    fontFamily: FontFamilyManager.kNunitoFont,
+    color: ColorManager.greyColor100,
+  );
 }

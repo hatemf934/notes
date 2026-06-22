@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notabli/core/helper/show_model_button.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_family_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/text_manager.dart';
@@ -23,19 +24,21 @@ class EditCustomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       IconButton(
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back_ios_new_outlined,
           size: FontSizeManager.font30,
+          color: ColorManager.greyColor100,
         ),
         onPressed: () {
           Navigator.pop(context);
         },
       ),
-      const Text(
+      Text(
         TextManager.kCancel,
         style: TextStyle(
           fontFamily: FontFamilyManager.kOtamaFont,
           fontSize: FontSizeManager.font30,
+          color: ColorManager.greyColor100,
         ),
       ),
       const Spacer(),

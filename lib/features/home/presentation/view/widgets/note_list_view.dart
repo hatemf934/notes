@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/helper/show_buttom_adding_notes.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
-import 'package:notabli/core/utils/route_manager.dart';
 import 'package:notabli/core/models/note_model.dart';
-import 'package:notabli/features/home/presentation/view/widgets/content_list_view.dart';
+import 'package:notabli/features/adding_note/presentation/view/show_note_view.dart';
+import 'package:notabli/features/home/presentation/view/widgets/body_note_list_view.dart';
 
 class NoteListView extends StatelessWidget {
   const NoteListView({super.key, required this.note});
@@ -13,7 +14,8 @@ class NoteListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, RouteManager.kEditNote, arguments: note);
+        Navigator.pushNamed(context, ShowNoteView.id, arguments: note);
+        showButtomAddingNotes(context);
       },
       child: Container(
           padding: const EdgeInsets.symmetric(
@@ -22,7 +24,7 @@ class NoteListView extends StatelessWidget {
             color: ColorManager.primaryColor,
             borderRadius: BorderRadius.circular(RadiusManager.rd12),
           ),
-          child: ContentListView(
+          child: BodyNoteListView(
             noteModel: note,
           )),
     );

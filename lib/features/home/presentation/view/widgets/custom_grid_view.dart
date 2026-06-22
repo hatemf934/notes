@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
 import 'package:notabli/core/models/note_model.dart';
-import 'package:notabli/features/home/presentation/view/widgets/note_item.dart';
+import 'package:notabli/features/home/presentation/view/widgets/note_grid_view.dart';
 
 class CustomGridView extends StatelessWidget {
   const CustomGridView({super.key});
@@ -21,7 +21,7 @@ class CustomGridView extends StatelessWidget {
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,
           itemBuilder: (context, index) {
-            return NoteItem(
+            return NoteGridView(
               note: note[index],
             );
           },

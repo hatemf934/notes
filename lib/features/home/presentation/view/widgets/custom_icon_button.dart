@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
 
@@ -11,9 +12,10 @@ class IconButtonCustom extends StatelessWidget {
       padding: const EdgeInsets.only(right: RadiusManager.rd16),
       child: IconButton(
           onPressed: onPressed,
-          icon: const Icon(
+          icon: Icon(
             Icons.check_circle_outline_rounded,
             size: FontSizeManager.font35,
+            color: ColorManager.greyColor100,
           )),
     );
   }
