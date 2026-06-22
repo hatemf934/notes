@@ -28,34 +28,37 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(PaddingManager.pd16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: HeightManager.h50),
-              const SearchAndSettingLayoutSection(),
-              BlocBuilder<NoteCubit, NoteState>(builder: (context, state) {
-                if (state is DisplaynotesEmpty) {
-                  return const Expanded(child: EmptyNotes());
-                } else {
-                  return BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
-                    builder: (context, state) {
-                      if (state == LayoutcubitState.GridView) {
-                        return const Expanded(child: CustomGridView());
-                      } else if (state == LayoutcubitState.ListView) {
-                        return const Expanded(child: CustomListView());
-                      } else {
-                        return const SizedBox.shrink();
-                      }
-                    },
-                  );
-                }
-              })
-            ],
+    return BlocProvider(
+      create: (context) => LayoutcubitCubit(),
+      child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(PaddingManager.pd16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: HeightManager.h50),
+                const SearchAndSettingLayoutSection(),
+                BlocBuilder<NoteCubit, NoteState>(builder: (context, state) {
+                  if (state is DisplaynotesEmpty) {
+                    return const Expanded(child: EmptyNotes());
+                  } else {
+                    return BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
+                      builder: (context, state) {
+                        if (state == LayoutcubitState.GridView) {
+                          return const Expanded(child: CustomGridView());
+                        } else if (state == LayoutcubitState.ListView) {
+                          return const Expanded(child: CustomListView());
+                        } else {
+                          return const SizedBox.shrink();
+                        }
+                      },
+                    );
+                  }
+                })
+              ],
+            ),
           ),
-        ),
-        floatingActionButton: const CustomFloatingActionButton());
+          floatingActionButton: const CustomFloatingActionButton()),
+    );
   }
 }
