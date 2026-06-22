@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/helper/show_buttom_adding_notes.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
@@ -24,11 +25,8 @@ class CustomFloatingActionButton extends StatelessWidget {
         child: FloatingActionButton(
           backgroundColor: ColorManager.greyColor100,
           onPressed: () {
-            Navigator.pushNamed(context, ShowNoteScreen.id).then((_) {
-              // إخفاء لوحة المفاتيح بعد الانتقال
-              FocusScope.of(context).unfocus();
-            });
-            ;
+            Navigator.pushNamed(context, ShowNoteScreen.id);
+            showButtomAddingNotes(context);
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RadiusManager.rd48),
