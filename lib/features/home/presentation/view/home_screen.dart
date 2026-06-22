@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
-import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/features/home/presentation/bloc/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_cubit.dart';
 import 'package:notabli/features/home/presentation/view/widgets/empty_notes.dart';
 import 'package:notabli/features/home/presentation/view/widgets/search_and_setting_section.dart';

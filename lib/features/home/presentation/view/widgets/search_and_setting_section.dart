@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/features/home/presentation/bloc/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';

@@ -8,7 +8,7 @@ import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/helper/on_generate.dart';
 import 'package:notabli/core/utils/text_manager.dart';
-import 'package:notabli/core/cubits/layout_cubit/layoutcubit_cubit.dart';
+import 'package:notabli/features/home/presentation/bloc/layout_cubit/layoutcubit_cubit.dart';
 import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/features/adding_note/data/repo/note_repo_implements.dart';
@@ -40,6 +40,7 @@ void main() async {
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotes);
   await Hive.openBox<bool>(kTheme);
+
   runApp(const NoteApp());
 }
 
