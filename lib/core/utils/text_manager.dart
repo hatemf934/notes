@@ -19,4 +19,5 @@ class TextManager {
   static const String kTryAgain = "Something is wrong , please try again";
   static const String kIsGrid = "isGrid";
   static const String kIsDark = "isDark";
+  static const String kIsMeduim = "isMeduim";
 }

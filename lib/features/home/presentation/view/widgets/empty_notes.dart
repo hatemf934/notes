@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:notabli/constant.dart';
-import 'package:notabli/core/utils/font_family_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
-import 'package:notabli/core/utils/height_manager.dart';
+import 'package:notabli/core/utils/styles.dart';
 import 'package:notabli/core/utils/text_manager.dart';
+import 'package:notabli/core/utils/width_manager.dart';
 
 class EmptyNotes extends StatelessWidget {
   const EmptyNotes({super.key});
@@ -13,19 +13,15 @@ class EmptyNotes extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          const SizedBox(
-            height: HeightManager.h130,
-          ),
+          const Spacer(),
           Image.asset(
             kImage,
+            width: WidthManager.w200,
           ),
-          const Text(
-            TextManager.kEmptyScreen,
-            style: TextStyle(
-                fontFamily: FontFamilyManager.kOtamaFont,
-                fontWeight: FontWeight.bold,
-                fontSize: FontSizeManager.font20),
-          )
+          Text(TextManager.kEmptyScreen,
+              style: Styles.styleOtamaFont
+                  .copyWith(fontSize: FontSizeManager.font20)),
+          const Spacer(),
         ],
       ),
     );

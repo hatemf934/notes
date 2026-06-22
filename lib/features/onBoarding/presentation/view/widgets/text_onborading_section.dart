@@ -15,7 +15,9 @@ class TextOnBoardingSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(TextManager.kTitleBording, style: Styles.styleOtamaFont40),
+          Text(TextManager.kTitleBording,
+              style: Styles.styleOtamaFont
+                  .copyWith(fontSize: FontSizeManager.font40)),
           const SizedBox(height: HeightManager.h20),
           Text(TextManager.kSubTitleBording,
               style: Styles.styleInterFontgrey

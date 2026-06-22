@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
+import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_cubit.dart';
 import 'package:notabli/features/home/presentation/view/widgets/custom_icon_button_content_note.dart';
 
 class CustomRowIconsButtonGridView extends StatelessWidget {
@@ -15,7 +15,7 @@ class CustomRowIconsButtonGridView extends StatelessWidget {
         CustomIconButtonContentNote(
           onPressed: () {
             noteModel.delete();
-            BlocProvider.of<DisplaynoteCubit>(context).displaynote();
+            BlocProvider.of<NoteCubit>(context).getNote();
           },
           iconData: FontAwesomeIcons.trash,
         ),

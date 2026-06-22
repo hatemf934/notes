@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:notabli/core/cubits/displayNote/displaynote_cubit.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
+import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_cubit.dart';
 import 'package:notabli/features/home/presentation/view/widgets/note_grid_view.dart';
 
 class CustomGridView extends StatelessWidget {
@@ -10,10 +10,9 @@ class CustomGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DisplaynoteCubit, DisplaynoteState>(
+    return BlocBuilder<NoteCubit, NoteState>(
       builder: (context, state) {
-        List<NoteModel> note =
-            BlocProvider.of<DisplaynoteCubit>(context).note ?? [];
+        List<NoteModel> note = BlocProvider.of<NoteCubit>(context).notes;
         return MasonryGridView.count(
           scrollDirection: Axis.vertical,
           itemCount: note.length,

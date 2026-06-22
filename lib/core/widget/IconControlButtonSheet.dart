@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/utils/text_manager.dart';
@@ -15,9 +16,7 @@ class IconControlButtonSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () => Navigator.pop(context),
               icon: const Icon(
                 Icons.check_circle_outline_rounded,
                 size: FontSizeManager.font40,
@@ -32,7 +31,7 @@ class IconControlButtonSheet extends StatelessWidget {
               Text(
                 TextManager.kOk,
                 style: TextStyle(
-                  color: Colors.grey,
+                  color: ColorManager.colorgrey,
                   fontSize: FontSizeManager.font20,
                 ),
               ),

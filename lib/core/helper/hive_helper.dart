@@ -1,7 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:notabli/constant.dart';
 import 'package:notabli/core/utils/text_manager.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
 
 class HiveHelper {
   Future<void> addNotes(NoteModel note) async {
@@ -36,6 +36,19 @@ class HiveHelper {
     var gettheme = Hive.box<bool>(kTheme);
     return gettheme.get(
       TextManager.kIsGrid,
+      defaultValue: false,
+    );
+  }
+
+  Future<void> saveTextTheme(bool isMeduim) async {
+    var themeTextbox = Hive.box<bool>(kTheme);
+    await themeTextbox.put(TextManager.kIsMeduim, isMeduim);
+  }
+
+  getTextTheme() {
+    var gettheme = Hive.box<bool>(kTheme);
+    return gettheme.get(
+      TextManager.kIsMeduim,
       defaultValue: false,
     );
   }

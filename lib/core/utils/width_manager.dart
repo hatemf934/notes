@@ -10,4 +10,5 @@ class WidthManager {
   static const double w40 = 40;
   static const double w50 = 50;
   static const double w120 = 120;
+  static const double w200 = 200;
 }

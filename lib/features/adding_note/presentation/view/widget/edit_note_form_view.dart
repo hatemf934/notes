@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/features/adding_note/presentation/view/widget/custom_bloc_builder_note_form_view.dart';
 
 class EditNoteFormView extends StatelessWidget {

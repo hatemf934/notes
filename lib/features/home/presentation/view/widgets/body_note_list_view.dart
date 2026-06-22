@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/core/utils/styles.dart';
 import 'package:notabli/features/home/presentation/view/widgets/buttons_note_list_item.dart';
 import 'package:notabli/features/home/presentation/view/widgets/custom_time_adding_note.dart';

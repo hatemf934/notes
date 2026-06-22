@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/core/utils/route_manager.dart';
 import 'package:notabli/features/adding_note/presentation/view/show_note_view.dart';
 import 'package:notabli/features/home/presentation/view/home_screen.dart';

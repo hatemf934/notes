@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/text_manager.dart';
@@ -8,7 +9,7 @@ class TitleButtonSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,9 +25,7 @@ class TitleButtonSheet extends StatelessWidget {
               ),
               Text(
                 TextManager.kSave,
-                style: const TextStyle(
-                  color: Colors.grey,
-                ),
+                style: TextStyle(color: ColorManager.colorgrey),
               ),
             ],
           ),

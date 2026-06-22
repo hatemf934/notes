@@ -3,7 +3,7 @@ import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/route_manager.dart';
 import 'package:notabli/features/adding_note/presentation/view/widget/edit_custom_bar.dart';
 import 'package:notabli/features/adding_note/presentation/view/widget/edit_note_form_view.dart';
-import 'package:notabli/core/models/note_model.dart';
+import 'package:notabli/features/adding_note/data/model/note_model.dart';
 
 class ShowNoteView extends StatefulWidget {
   const ShowNoteView({super.key, required this.noteModel});
