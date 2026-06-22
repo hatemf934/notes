@@ -4,37 +4,14 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notabli/constant.dart';
 import 'package:notabli/core/services/hive_services.dart';
 import 'package:notabli/core/utils/color_manager.dart';
-import 'package:notabli/core/utils/font_manager.dart';
-import 'package:notabli/core/utils/height_manager.dart';
 import 'package:notabli/core/helper/on_generate.dart';
-import 'package:notabli/core/utils/text_manager.dart';
 import 'package:notabli/features/home/presentation/bloc/layout_cubit/layoutcubit_cubit.dart';
-import 'package:notabli/core/cubits/themetextcubit/themetext_cubit.dart';
 import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/features/adding_note/data/repo/note_repo_implements.dart';
 import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_cubit.dart';
 import 'package:notabli/features/onBoarding/presentation/view/onborading.dart';
 
 void main() async {
-  ErrorWidget.builder = (FlutterErrorDetails details) {
-    return const Scaffold(
-      backgroundColor: kPrimaryColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error, color: Colors.red, size: FontSizeManager.font48),
-            SizedBox(height: HeightManager.h20),
-            Text(TextManager.kTryAgain,
-                style: TextStyle(
-                    color: Colors.red, fontSize: FontSizeManager.font20),
-                textAlign: TextAlign.center)
-          ],
-        ),
-      ),
-    );
-  };
-
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(NoteModelAdapter());
@@ -57,9 +34,6 @@ class NoteApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LayoutcubitCubit(),
-        ),
-        BlocProvider(
-          create: (context) => ThemetextCubit(),
         ),
       ],
       child: MaterialApp(

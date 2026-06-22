@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/core/helper/show_buttom_adding_notes.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/core/utils/raduis_manager.dart';
@@ -13,10 +12,8 @@ class NoteListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, ShowNoteView.id, arguments: note);
-        showButtomAddingNotes(context);
-      },
+      onTap: () =>
+          Navigator.pushNamed(context, ShowNoteView.id, arguments: note),
       child: Container(
           padding: const EdgeInsets.symmetric(
               horizontal: PaddingManager.pd16, vertical: PaddingManager.pd12),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/core/helper/show_buttom_adding_notes.dart';
 import 'package:notabli/core/utils/color_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/height_manager.dart';
@@ -24,10 +23,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         width: WidthManager.w70,
         child: FloatingActionButton(
           backgroundColor: ColorManager.greyColor100,
-          onPressed: () {
-            Navigator.pushNamed(context, NoteView.id);
-            showButtomAddingNotes(context);
-          },
+          onPressed: () => Navigator.pushNamed(context, NoteView.id),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RadiusManager.rd48),
           ),
