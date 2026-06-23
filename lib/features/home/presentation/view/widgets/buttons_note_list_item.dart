@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notabli/core/utils/width_manager.dart';
 import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/styles.dart';
@@ -22,19 +23,18 @@ class ButtonNoteListItem extends StatelessWidget {
                 .copyWith(fontSize: FontSizeManager.font12)),
         const Spacer(),
         CustomIconButtonContentNote(
+          sizeIcon: FontSizeManager.font25,
+          onPressed: () {},
+          iconData: Icons.archive_outlined,
+        ),
+        const SizedBox(width: WidthManager.w16),
+        CustomIconButtonContentNote(
+          sizeIcon: FontSizeManager.font20,
           onPressed: () {
             noteModel.delete();
             BlocProvider.of<NoteCubit>(context).getNote();
           },
           iconData: FontAwesomeIcons.trash,
-        ),
-        CustomIconButtonContentNote(
-          onPressed: () {},
-          iconData: Icons.archive_outlined,
-        ),
-        CustomIconButtonContentNote(
-          onPressed: () {},
-          iconData: FontAwesomeIcons.share,
         ),
       ],
     );

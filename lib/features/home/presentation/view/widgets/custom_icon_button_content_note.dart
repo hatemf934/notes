@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/core/utils/font_manager.dart';
+import 'package:notabli/core/utils/color_manager.dart';
 
 class CustomIconButtonContentNote extends StatelessWidget {
   const CustomIconButtonContentNote({
     super.key,
     required this.onPressed,
     required this.iconData,
+    required this.sizeIcon,
   });
   final VoidCallback onPressed;
   final IconData iconData;
+  final double sizeIcon;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: onPressed,
-        icon: Icon(
-          iconData,
-          size: FontSizeManager.font16,
-          color: Colors.grey,
-        ));
+    return GestureDetector(
+      onTap: onPressed,
+      child: Icon(
+        iconData,
+        size: sizeIcon,
+        color: ColorManager.colorgrey,
+      ),
+    );
   }
 }
