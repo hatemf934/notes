@@ -16,6 +16,7 @@ class NoteCubit extends Cubit<NoteState> {
 
   void getNote() {
     notes = repoImplements.getNote();
+    notes.sort((a, b) => b.dateTime.compareTo(a.dateTime));
     if (notes.isEmpty) {
       emit(DisplaynotesEmpty());
     } else {

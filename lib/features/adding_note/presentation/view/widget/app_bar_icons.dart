@@ -29,6 +29,7 @@ class AppBarIcons extends StatelessWidget {
             title: title,
             subTitle: subTitle,
             date: formattedDate,
+            dateTime: DateTime.now(),
           );
           BlocProvider.of<NoteCubit>(context).addNote(notemodel);
           BlocProvider.of<NoteCubit>(context).getNote();

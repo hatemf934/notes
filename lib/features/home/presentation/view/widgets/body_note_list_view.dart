@@ -26,7 +26,8 @@ class BodyNoteListView extends StatelessWidget {
             style: Styles.styleInterFontgrey
                 .copyWith(fontSize: FontSizeManager.font20)),
         const SizedBox(height: HeightManager.h10),
-        const CustomTimeAddingNote(
+        CustomTimeAddingNote(
+          noteModel: noteModel,
           textSize: FontSizeManager.font13,
         ),
       ],

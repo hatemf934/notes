@@ -9,6 +9,11 @@ class NoteModel extends HiveObject {
   String subTitle;
   @HiveField(2)
   final String date;
-
-  NoteModel({required this.title, required this.subTitle, required this.date});
+  @HiveField(3)
+  final DateTime dateTime;
+  NoteModel(
+      {required this.title,
+      required this.subTitle,
+      required this.date,
+      required this.dateTime});
 }
