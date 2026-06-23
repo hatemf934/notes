@@ -20,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String searchQuery = "";
   @override
   void initState() {
     super.initState();
@@ -37,7 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: HeightManager.h50),
-                const SearchAndSettingLayoutSection(),
+                SearchAndSettingLayoutSection(
+                  onChange: (query) {
+                    setState(() {
+                      searchQuery = query;
+                    });
+                  },
+                ),
                 BlocBuilder<NoteCubit, NoteState>(builder: (context, state) {
                   if (state is DisplaynotesEmpty) {
                     return const Expanded(child: EmptyNotes());
@@ -47,7 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         if (state == LayoutcubitState.GridView) {
                           return const Expanded(child: CustomGridView());
                         } else if (state == LayoutcubitState.ListView) {
-                          return const Expanded(child: CustomListView());
+                          return Expanded(
+                              child: CustomListView(
+                            searchQuery: searchQuery,
+                          ));
                         } else {
                           return const SizedBox.shrink();
                         }

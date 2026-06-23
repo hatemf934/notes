@@ -6,25 +6,39 @@ import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_c
 import 'package:notabli/features/home/presentation/view/widgets/note_list_view.dart';
 
 class CustomListView extends StatelessWidget {
-  const CustomListView({super.key});
-
+  const CustomListView({super.key, required this.searchQuery});
+  final String searchQuery;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NoteCubit, NoteState>(
       builder: (context, state) {
-        List<NoteModel> note = BlocProvider.of<NoteCubit>(context).notes;
-        return ListView.builder(
-            itemCount: note.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: PaddingManager.pd8,
-                ),
-                child: NoteListView(
-                  note: note[index],
-                ),
-              );
-            });
+        List<NoteModel> allnote = BlocProvider.of<NoteCubit>(context).notes;
+        List<NoteModel> notes = searchQuery.isEmpty
+            ? allnote
+            : allnote
+                .where((note) =>
+                    note.title
+                        .toLowerCase()
+                        .contains(searchQuery.toLowerCase()) ||
+                    note.subTitle
+                        .toLowerCase()
+                        .contains(searchQuery.toLowerCase()))
+                .toList();
+
+        return notes.isEmpty
+            ? Center(child: Image.asset("assets/NoResultFound.png"))
+            : ListView.builder(
+                itemCount: notes.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: PaddingManager.pd8,
+                    ),
+                    child: NoteListView(
+                      note: notes[index],
+                    ),
+                  );
+                });
       },
     );
   }

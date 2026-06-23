@@ -11,8 +11,8 @@ import 'package:notabli/core/utils/text_manager.dart';
 import 'package:notabli/core/utils/width_manager.dart';
 
 class SearchAndSettingLayoutSection extends StatelessWidget {
-  const SearchAndSettingLayoutSection({super.key});
-
+  const SearchAndSettingLayoutSection({super.key, required this.onChange});
+  final Function(String query) onChange;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,6 +21,7 @@ class SearchAndSettingLayoutSection extends StatelessWidget {
           height: HeightManager.h45,
           width: MediaQuery.of(context).size.width * .75,
           child: TextField(
+            onChanged: onChange,
             decoration: InputDecoration(
               hintText: TextManager.kSearch,
               hintStyle: const TextStyle(
