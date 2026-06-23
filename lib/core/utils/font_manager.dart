@@ -1,6 +1,5 @@
 class FontSizeManager {
   FontSizeManager._();
-  static const double font6 = 6;
   static const double font10 = 10;
   static const double font12 = 12;
   static const double font13 = 13;

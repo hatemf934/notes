@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notabli/constant.dart';
+import 'package:notabli/core/utils/assets_manager.dart';
 import 'package:notabli/core/utils/font_manager.dart';
 import 'package:notabli/core/utils/styles.dart';
 import 'package:notabli/core/utils/text_manager.dart';
@@ -15,7 +15,7 @@ class EmptyNotes extends StatelessWidget {
         children: [
           const Spacer(),
           Image.asset(
-            kImage,
+            AssetsManager.noNotes,
             width: WidthManager.w200,
           ),
           Text(TextManager.kEmptyScreen,

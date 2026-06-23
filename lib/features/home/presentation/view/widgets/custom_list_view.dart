@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notabli/core/utils/assets_manager.dart';
 import 'package:notabli/core/utils/padding_manager.dart';
 import 'package:notabli/features/adding_note/data/model/note_model.dart';
 import 'package:notabli/features/adding_note/presentation/bloc/note_cubit/note_cubit.dart';
@@ -26,7 +27,7 @@ class CustomListView extends StatelessWidget {
                 .toList();
 
         return notes.isEmpty
-            ? Center(child: Image.asset("assets/NoResultFound.png"))
+            ? Center(child: Image.asset(AssetsManager.noResult))
             : ListView.builder(
                 itemCount: notes.length,
                 itemBuilder: (context, index) {

@@ -39,11 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 const SizedBox(height: HeightManager.h50),
                 SearchAndSettingLayoutSection(
-                  onChange: (query) {
-                    setState(() {
-                      searchQuery = query;
-                    });
-                  },
+                  onChange: (query) => setState(() {
+                    searchQuery = query;
+                  }),
                 ),
                 BlocBuilder<NoteCubit, NoteState>(builder: (context, state) {
                   if (state is DisplaynotesEmpty) {
@@ -52,12 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     return BlocBuilder<LayoutcubitCubit, LayoutcubitState>(
                       builder: (context, state) {
                         if (state == LayoutcubitState.GridView) {
-                          return const Expanded(child: CustomGridView());
+                          return Expanded(
+                              child: CustomGridView(searchQuery: searchQuery));
                         } else if (state == LayoutcubitState.ListView) {
                           return Expanded(
-                              child: CustomListView(
-                            searchQuery: searchQuery,
-                          ));
+                              child: CustomListView(searchQuery: searchQuery));
                         } else {
                           return const SizedBox.shrink();
                         }
